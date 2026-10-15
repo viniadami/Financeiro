@@ -1,0 +1,130 @@
+@import './tokens.css';
+
+/* Cores do P1 que o Sistema Visual v2 não tokeniza. */
+:root {
+  --color-hover: #E4E0D6;
+  --color-device-border: #DDD8CE;
+  --color-handle: #C9C4B8;
+  --color-handle-active: #5B6662;
+  --color-scrim: rgba(15, 21, 20, 0.42);
+  --color-scrim-dragging: rgba(15, 21, 20, 0.28);
+  --color-scrim-dialog: rgba(15, 21, 20, 0.38);
+  --shadow-sheet: 0 -4px 24px rgba(15, 21, 20, 0.12);
+  --shadow-segment: 0 1px 3px rgba(28, 35, 33, 0.14);
+  --shadow-dialog: 0 12px 32px rgba(15, 21, 20, 0.28);
+  --shadow-toast: 0 10px 28px rgba(15, 21, 20, 0.28);
+  --toast-bg: #1C2321;
+  --toast-text: #FFFFFF;
+  --toast-text-secondary: #C6D0CD;
+  --toast-accent: #5CC2B5;
+  --toast-hover: #2A3533;
+  --page-bg: #E9E6DF;
+}
+
+[data-theme="dark"] {
+  --color-hover: #2C3735;
+  --color-device-border: #2C3735;
+  --color-handle: #3A4745;
+  --color-handle-active: #A3B0AC;
+  --toast-bg: #E8EEEC;
+  --toast-text: #0F1514;
+  --toast-text-secondary: #3F4A47;
+  --toast-accent: #0B5D5B;
+  --toast-hover: #D3DCD9;
+  --page-bg: #080C0B;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  margin: 0;
+  height: 100%;
+}
+
+body {
+  background: var(--page-bg);
+  color: var(--color-text);
+  font-family: var(--font-family);
+  -webkit-font-smoothing: antialiased;
+  -webkit-tap-highlight-color: transparent;
+}
+
+button,
+input,
+textarea {
+  font: inherit;
+  color: inherit;
+}
+
+button {
+  cursor: pointer;
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+button:disabled {
+  cursor: not-allowed;
+}
+
+:focus-visible {
+  outline: var(--focus-ring);
+  outline-offset: var(--focus-ring-offset);
+}
+
+/* Contêineres que só recebem foco por código (diálogos) não mostram o anel. */
+[tabindex='-1']:focus {
+  outline: none;
+}
+
+.material-symbols-rounded {
+  font-family: 'Material Symbols Rounded';
+  font-weight: normal;
+  font-style: normal;
+  line-height: 1;
+  letter-spacing: normal;
+  text-transform: none;
+  white-space: nowrap;
+  direction: ltr;
+  display: inline-block;
+  -webkit-font-feature-settings: 'liga';
+  font-feature-settings: 'liga';
+  font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+}
+
+.material-symbols-rounded.is-filled {
+  font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.spin {
+  animation: spin 0.9s linear infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .spin {
+    animation: none;
+  }
+}

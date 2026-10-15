@@ -1,0 +1,174 @@
+/* Tokens copiados de design/project/Sistema Visual v2.dc.html, seção 12. Não editar à mão. */
+:root {
+  /* Cores · modo claro */
+  --color-bg:                       #F7F5F0;
+  --color-surface:                  #FFFFFF;
+  --color-surface-subtle:           #EFECE5;
+  --color-border:                   #E4E0D6;
+  --color-text:                     #1C2321;
+  --color-text-secondary:           #5B6662;
+  --color-primary:                  #0B5D5B;
+  --color-primary-hover:            #094B49;
+  --color-primary-pressed:          #073D3B;
+  --color-on-primary:               #FFFFFF;
+  --color-amber-text:               #8A5300;
+  --color-amber-fill:               #A86A00;
+  --color-terracotta:               #B23F25;
+  --color-terracotta-hatch:         #D4765F;
+  --color-track:                    #E3E8E6;
+  --color-key-pressed:              #DDD8CE;
+  --color-bg-positive:              #E2EFED;
+  --color-bg-amber:                 #F8EBD3;
+  --color-bg-terracotta:            #F6E1DB;
+
+  /* Categorias · ícone e fundo (claro) */
+  --cat-moradia-icon:               #194276;
+  --cat-moradia-bg:                 #A6CFFF;
+  --cat-transporte-icon:            #004D67;
+  --cat-transporte-bg:              #86DAF5;
+  --cat-alimentacao-icon:           #673300;
+  --cat-alimentacao-bg:             #F7BF8F;
+  --cat-saude-icon:                 #006D81;
+  --cat-saude-bg:                   #ACEAF7;
+  --cat-educacao-icon:              #50326C;
+  --cat-educacao-bg:                #DBBDFB;
+  --cat-cuidados-pessoais-icon:     #8C4062;
+  --cat-cuidados-pessoais-bg:       #FFCDE1;
+  --cat-lazer-esporte-icon:         #6D2734;
+  --cat-lazer-esporte-bg:           #FFB4BC;
+  --cat-vestuario-icon:             #632A54;
+  --cat-vestuario-bg:               #F4B6E0;
+  --cat-assinaturas-icon:           #405A9B;
+  --cat-assinaturas-bg:             #CADEFF;
+  --cat-presentes-icon:             #6F4B8D;
+  --cat-presentes-bg:               #EAD3FF;
+  --cat-dinheiro-livre-icon:        #2E2821;
+  --cat-dinheiro-livre-bg:          #BCB6AF;
+  --cat-financeiro-icon:            #313F4D;
+  --cat-financeiro-bg:              #CBD6E1;
+  --cat-futuro-icon:                #393A76;
+  --cat-futuro-bg:                  #C0C6FF;
+
+  /* Tipografia */
+  --font-family:                    "Manrope", system-ui, sans-serif;
+  --font-numeric:                   tabular-nums;
+  --text-display:                   56px;  /* valor de destaque · 800 */
+  --text-value:                     44px;  /* valor de card · 800 */
+  --text-title:                     24px;  /* 700 */
+  --text-subtitle:                  18px;  /* 600 */
+  --text-body:                      16px;  /* 500 */
+  --text-caption:                   13px;  /* 600 */
+  --weight-body:                    500;
+  --weight-semibold:                600;
+  --weight-bold:                    700;
+  --weight-extrabold:               800;
+  --tracking-display:               -0.03em;
+  --line-body:                      1.5;
+
+  /* Raios */
+  --radius-xs:                      8px;
+  --radius-sm:                      12px;
+  --radius-md:                      16px;
+  --radius-key:                     16px;
+  --radius-button:                  18px;
+  --radius-card:                    24px;
+  --radius-sheet:                   28px;
+  --radius-pill:                    999px;
+
+  /* Espaçamentos */
+  --space-1:                        4px;
+  --space-2:                        8px;
+  --space-3:                        12px;
+  --space-4:                        16px;
+  --space-5:                        20px;
+  --space-6:                        24px;
+  --space-8:                        32px;
+  --space-10:                       40px;
+
+  /* Alvos e foco */
+  --target-min:                     44px;
+  --target-key:                     56px;
+  --focus-ring:                     3px solid var(--color-primary);
+  --focus-ring-offset:              2px;
+
+  /* Barra de orçamento */
+  --budget-limit-position:          66.667%;  /* 100% a 2/3; 150% = borda */
+  --budget-cap:                     150%;
+
+  /* Sombra (só no claro) */
+  --shadow-card:                    0 1px 2px rgba(28, 35, 33, 0.06);
+
+  /* Movimento */
+  --ease-out:                       cubic-bezier(0.2, 0.8, 0.2, 1);
+  --ease-in:                        cubic-bezier(0.4, 0, 1, 1);
+  --motion-sheet-in:                280ms;
+  --motion-sheet-out:               200ms;
+  --motion-toast-in:                200ms;
+  --motion-toast-out:               160ms;
+  --motion-bar:                     400ms;
+  --toast-duration:                 5s;
+}
+
+[data-theme="dark"] {
+  /* Cores · modo escuro */
+  --color-bg:                       #0F1514;
+  --color-surface:                  #18201F;
+  --color-surface-subtle:           #222C2A;
+  --color-border:                   #2C3735;
+  --color-text:                     #E8EEEC;
+  --color-text-secondary:           #A3B0AC;
+  --color-primary:                  #5CC2B5;
+  --color-primary-hover:            #7AD3C7;
+  --color-primary-pressed:          #4AA89C;
+  --color-on-primary:               #0F1514;
+  --color-amber-text:               #F2B54A;
+  --color-amber-fill:               #F2B54A;
+  --color-terracotta:               #F08B6E;
+  --color-terracotta-hatch:         #B5654F;
+  --color-track:                    #2A3533;
+  --color-key-pressed:              #2E3A38;
+  --color-bg-positive:              #1D3533;
+  --color-bg-amber:                 #3A2F1A;
+  --color-bg-terracotta:            #3D241D;
+
+  /* Categorias · ícone e fundo (escuro) */
+  --cat-moradia-icon:               #CEEAFF;
+  --cat-moradia-bg:                 #314E75;
+  --cat-transporte-icon:            #BCF2FF;
+  --cat-transporte-bg:              #045669;
+  --cat-alimentacao-icon:           #FFE0C0;
+  --cat-alimentacao-bg:             #6A431D;
+  --cat-saude-icon:                 #84DEF0;
+  --cat-saude-bg:                   #113F47;
+  --cat-educacao-icon:              #F2DEFF;
+  --cat-educacao-bg:                #57426D;
+  --cat-cuidados-pessoais-icon:     #FDB6D2;
+  --cat-cuidados-pessoais-bg:       #4C2D3A;
+  --cat-lazer-esporte-icon:         #FFD8DD;
+  --cat-lazer-esporte-bg:           #703B42;
+  --cat-vestuario-icon:             #FFD9F5;
+  --cat-vestuario-bg:               #683C5B;
+  --cat-assinaturas-icon:           #B2CDFF;
+  --cat-assinaturas-bg:             #2C3752;
+  --cat-presentes-icon:             #DEBEFC;
+  --cat-presentes-bg:               #3F314C;
+  --cat-dinheiro-livre-icon:        #FAF4EE;
+  --cat-dinheiro-livre-bg:          #706B64;
+  --cat-financeiro-icon:            #DEE9F5;
+  --cat-financeiro-bg:              #454E58;
+  --cat-futuro-icon:                #DFE4FF;
+  --cat-futuro-bg:                  #454875;
+
+  --shadow-card:                    none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :root {
+    /* sem deslizar: sheet e toast só com fade curto; barra sem animação */
+    --motion-sheet-in:              120ms;
+    --motion-sheet-out:             100ms;
+    --motion-toast-in:              120ms;
+    --motion-toast-out:             0ms;
+    --motion-bar:                   0ms;
+  }
+}

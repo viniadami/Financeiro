@@ -1,0 +1,599 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<meta name="design_doc_mode" content="canvas">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,400..600,0..1,0&amp;display=block" rel="stylesheet">
+<style>body{margin:0;background:#E9E6DF;font-family:Manrope,system-ui,sans-serif;-webkit-font-smoothing:antialiased}a{color:#0B5D5B}a:hover{color:#094B49}@media (prefers-reduced-motion: reduce){*{transition:none !important;animation:none !important}}</style>
+</helmet>
+<div style="padding:48px;width:max-content;font-family:Manrope,system-ui,sans-serif;font-variant-numeric:tabular-nums;filter:{{ filtro }}">
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs><filter id="cb-deutan"><feColorMatrix type="matrix" values="0.367322 0.860646 -0.227968 0 0 0.280085 0.672501 0.047413 0 0 -0.011820 0.042940 0.968881 0 0 0 0 0 1 0"></feColorMatrix></filter><filter id="cb-protan"><feColorMatrix type="matrix" values="0.152286 1.052583 -0.204868 0 0 0.114503 0.786281 0.099216 0 0 -0.003882 -0.048116 1.051998 0 0 0 0 0 1 0"></feColorMatrix></filter></defs></svg>
+
+<div style="display:flex;flex-direction:column;gap:16px;max-width:1752px;margin-bottom:32px">
+<div style="display:flex;align-items:center;gap:12px"><span style="width:44px;height:44px;border-radius:14px;background:#0B5D5B;color:#FFFFFF;display:grid;place-items:center"><span class="material-symbols-rounded" aria-hidden="true" style="font-size:24px">savings</span></span><div style="font-size:30px;font-weight:800;letter-spacing:-0.02em;color:#1C2321">Nosso Caixa · Sistema visual</div></div>
+<p style="margin:0;font-size:16px;line-height:1.5;color:#5B6662;max-width:920px;text-wrap:pretty">Modo claro e escuro lado a lado, com os mesmos componentes e os Dados de referência de quarta-feira, 14/10/2026. Tipografia Manrope com números tabulares; ícones Material Symbols Rounded.</p>
+<div style="display:flex;flex-wrap:wrap;gap:8px;font-size:13px;font-weight:600;color:#1C2321">
+<span style="padding:8px 12px;border-radius:999px;background:#FFFFFF;border:1px solid #E4E0D6">Contraste AA</span>
+<span style="padding:8px 12px;border-radius:999px;background:#FFFFFF;border:1px solid #E4E0D6">Alvos ≥ 44px · teclas e categorias ≥ 56px</span>
+<span style="padding:8px 12px;border-radius:999px;background:#FFFFFF;border:1px solid #E4E0D6">Texto até 200% sem cortar valores</span>
+<span style="padding:8px 12px;border-radius:999px;background:#FFFFFF;border:1px solid #E4E0D6">Alternativa visível a todo deslizar</span>
+<span style="padding:8px 12px;border-radius:999px;background:#FFFFFF;border:1px solid #E4E0D6">Foco visível no desktop</span>
+<span style="padding:8px 12px;border-radius:999px;background:#FFFFFF;border:1px solid #E4E0D6">Respeita “reduzir movimento”</span>
+<span style="padding:8px 12px;border-radius:999px;background:#FFFFFF;border:1px solid #E4E0D6">Estado nunca só pela cor</span>
+</div>
+</div>
+
+<div style="display:flex;gap:32px;align-items:flex-start">
+
+<div data-col="light" style="display:{{ dispLight }};width:860px;flex:none;flex-direction:column;gap:44px;box-sizing:border-box;padding:40px;border-radius:32px;background:#F7F5F0;color:#1C2321">
+
+<div style="display:flex;align-items:center;justify-content:space-between;gap:16px">
+<div style="font-size:24px;font-weight:800;letter-spacing:-0.01em">Modo claro</div>
+<div style="font-size:13px;font-weight:600;color:#5B6662">Cards brancos com borda e sombra leve</div>
+</div>
+
+<div style="display:flex;flex-direction:column;gap:16px">
+<div style="font-size:13px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:#5B6662">Cores</div>
+<div style="display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px">
+<div style="display:flex;flex-direction:column;gap:6px"><div style="height:64px;border-radius:14px;background:#F7F5F0;border:1px solid #E4E0D6"></div><div style="font-size:14px;font-weight:700">Fundo</div><div style="font-size:12px;color:#5B6662">#F7F5F0</div></div>
+<div style="display:flex;flex-direction:column;gap:6px"><div style="height:64px;border-radius:14px;background:#FFFFFF;border:1px solid #E4E0D6"></div><div style="font-size:14px;font-weight:700">Superfície</div><div style="font-size:12px;color:#5B6662">#FFFFFF</div></div>
+<div style="display:flex;flex-direction:column;gap:6px"><div style="height:64px;border-radius:14px;background:#EFECE5;border:1px solid #E4E0D6"></div><div style="font-size:14px;font-weight:700">Superfície sutil</div><div style="font-size:12px;color:#5B6662">#EFECE5 · teclas, campos</div></div>
+<div style="display:flex;flex-direction:column;gap:6px"><div style="height:64px;border-radius:14px;background:#E3E8E6"></div><div style="font-size:14px;font-weight:700">Trilho</div><div style="font-size:12px;color:#5B6662">#E3E8E6</div></div>
+<div style="display:flex;flex-direction:column;gap:6px"><div style="height:64px;border-radius:14px;background:#1C2321"></div><div style="font-size:14px;font-weight:700">Texto · despesa</div><div style="font-size:12px;color:#5B6662;display:flex;justify-content:space-between"><span>#1C2321</span><span>14,7:1</span></div></div>
+<div style="display:flex;flex-direction:column;gap:6px"><div style="height:64px;border-radius:14px;background:#5B6662"></div><div style="font-size:14px;font-weight:700">Texto secundário</div><div style="font-size:12px;color:#5B6662;display:flex;justify-content:space-between"><span>#5B6662</span><span>5,5:1</span></div></div>
+<div style="display:flex;flex-direction:column;gap:6px"><div style="height:64px;border-radius:14px;background:#0B5D5B"></div><div style="font-size:14px;font-weight:700">Primária · receita</div><div style="font-size:12px;color:#5B6662;display:flex;justify-content:space-between"><span>#0B5D5B</span><span>7,1:1</span></div></div>
+<div style="display:flex;flex-direction:column;gap:6px"><div style="height:64px;border-radius:14px;background:#0B5D5B;color:#FFF;display:grid;place-items:center;font-size:18px;font-weight:700">Aa</div><div style="font-size:14px;font-weight:700">Sobre a primária</div><div style="font-size:12px;color:#5B6662;display:flex;justify-content:space-between"><span>#FFF</span><span>7,7:1</span></div></div>
+<div style="display:flex;flex-direction:column;gap:6px"><div style="height:64px;border-radius:14px;background:#8A5300"></div><div style="font-size:14px;font-weight:700">Âmbar · texto</div><div style="font-size:12px;color:#5B6662;display:flex;justify-content:space-between"><span>#8A5300</span><span>5,8:1</span></div></div>
+<div style="display:flex;flex-direction:column;gap:6px"><div style="height:64px;border-radius:14px;background:#A86A00"></div><div style="font-size:14px;font-weight:700">Âmbar · preenchimento</div><div style="font-size:12px;color:#5B6662;display:flex;justify-content:space-between"><span>#A86A00</span><span>3,6:1 no trilho</span></div></div>
+<div style="display:flex;flex-direction:column;gap:6px"><div style="height:64px;border-radius:14px;background:#B23F25"></div><div style="font-size:14px;font-weight:700">Terracota · estouro</div><div style="font-size:12px;color:#5B6662;display:flex;justify-content:space-between"><span>#B23F25</span><span>5,3:1</span></div></div>
+<div style="display:flex;flex-direction:column;gap:6px"><div style="height:64px;border-radius:14px;display:flex;overflow:hidden;border:1px solid #E4E0D6"><span style="flex:1;background:#E2EFED"></span><span style="flex:1;background:#F8EBD3"></span><span style="flex:1;background:#F6E1DB"></span></div><div style="font-size:14px;font-weight:700">Fundos de estado</div><div style="font-size:12px;color:#5B6662">#E2EFED · #F8EBD3 · #F6E1DB</div></div>
+</div>
+</div>
+
+<div style="display:flex;flex-direction:column;gap:16px">
+<div style="font-size:13px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:#5B6662">Tipografia · Manrope, números tabulares</div>
+<div style="display:grid;grid-template-columns:minmax(0,1.4fr) minmax(0,1fr);gap:16px">
+<div style="background:#FFFFFF;border:1px solid #E4E0D6;border-radius:24px;padding:24px;box-shadow:0 1px 2px rgba(28,35,33,.06);display:flex;flex-direction:column;gap:18px">
+<div style="display:flex;flex-direction:column;gap:4px"><div style="font-size:14px;font-weight:600;color:#5B6662">Valor · 56/800</div><div style="font-size:56px;line-height:1;font-weight:800;letter-spacing:-0.03em">R$ 1.693,10</div></div>
+<div style="display:flex;flex-direction:column;gap:4px"><div style="font-size:12px;font-weight:600;color:#5B6662">Título · 24/700</div><div style="font-size:24px;font-weight:700;letter-spacing:-0.01em">Orçamento de outubro</div></div>
+<div style="display:flex;flex-direction:column;gap:4px"><div style="font-size:12px;font-weight:600;color:#5B6662">Subtítulo · 18/600</div><div style="font-size:18px;font-weight:600">Alimentação</div></div>
+<div style="display:flex;flex-direction:column;gap:4px"><div style="font-size:12px;font-weight:600;color:#5B6662">Corpo · 16/500</div><div style="font-size:16px;font-weight:500;line-height:1.5">Faltam 17 dias para fechar o mês.</div></div>
+<div style="display:flex;flex-direction:column;gap:4px"><div style="font-size:12px;font-weight:600;color:#5B6662">Legenda · 13/600</div><div style="font-size:13px;font-weight:600;color:#5B6662">Panty · há 2 minutos · Vale-alimentação</div></div>
+</div>
+<div style="background: #FFFFFF; border: 1px solid #E4E0D6; border-radius: 24px; padding: 24px; box-shadow: 0 1px 2px rgba(28,35,33,.06); display: flex; flex-direction: column; gap: 12px; width: 278px; height: 338px">
+<div style="font-size:14px;font-weight:700">Receitas de outubro</div>
+<div style="display:flex;justify-content:space-between;font-size:15px"><span style="color:#5B6662">Salário Vini</span><span style="font-weight:600">3.500,00</span></div>
+<div style="display:flex;justify-content:space-between;font-size:15px"><span style="color:#5B6662">Salário Panty</span><span style="font-weight:600">3.600,00</span></div>
+<div style="display:flex;justify-content:space-between;font-size:15px"><span style="color:#5B6662">Ajuda familiar</span><span style="font-weight:600">3.438,50</span></div>
+<div style="display:flex;justify-content:space-between;font-size:15px"><span style="color:#5B6662">Vale-alimentação</span><span style="font-weight:600">700,00</span></div>
+<div style="display:flex;justify-content:space-between;font-size:15px"><span style="color:#5B6662">Vale-combustível</span><span style="font-weight:600">448,00</span></div>
+<div style="height:1px;background:#E4E0D6"></div>
+<div style="display:flex;justify-content:space-between;font-size:16px;font-weight:800;color:#0B5D5B"><span>Total</span><span>+ R$ 11.686,50 ↑</span></div>
+<div style="font-size:12px;color:#5B6662;line-height:1.4">Dígitos de largura fixa: as colunas alinham sem tabela.</div>
+</div>
+</div>
+</div>
+
+<div style="display:flex;flex-direction:column;gap:16px">
+<div style="font-size:13px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:#5B6662">Estados de valor · cor + sinal + ícone + texto</div>
+<div style="background:#FFFFFF;border:1px solid #E4E0D6;border-radius:24px;padding:8px 24px;box-shadow:0 1px 2px rgba(28,35,33,.06);display:flex;flex-direction:column">
+<div style="display:flex;align-items:center;gap:14px;min-height:72px;border-bottom:1px solid #E4E0D6"><span style="width:44px;height:44px;border-radius:14px;background:#E2EFED;color:#0B5D5B;display:grid;place-items:center;flex:none"><span class="material-symbols-rounded" aria-hidden="true" style="font-size:22px">arrow_upward</span></span><div style="flex:1;min-width:0"><div style="font-size:16px;font-weight:700">Receita</div><div style="font-size:13px;color:#5B6662">Salário Vini · recebido</div></div><div style="font-size:18px;font-weight:800;color:#0B5D5B">+ R$ 3.500,00 ↑</div></div>
+<div style="display:flex;align-items:center;gap:14px;min-height:72px;border-bottom:1px solid #E4E0D6"><span style="width:44px;height:44px;border-radius:14px;background:#EFECE5;color:#1C2321;display:grid;place-items:center;flex:none"><span class="material-symbols-rounded" aria-hidden="true" style="font-size:22px">arrow_downward</span></span><div style="flex:1;min-width:0"><div style="font-size:16px;font-weight:700">Despesa</div><div style="font-size:13px;color:#5B6662">Supermercado · Vale-alimentação</div></div><div style="font-size:18px;font-weight:800;color:#1C2321">− R$ 87,40</div></div>
+<div style="display:flex;align-items:center;gap:14px;min-height:72px;border-bottom:1px solid #E4E0D6"><span style="width:44px;height:44px;border-radius:14px;background:#F8EBD3;color:#8A5300;display:grid;place-items:center;flex:none"><span class="material-symbols-rounded" aria-hidden="true" style="font-size:22px;font-variation-settings:'FILL' 1">warning</span></span><div style="flex:1;min-width:0"><div style="font-size:16px;font-weight:700">Alerta</div><div style="font-size:13px;color:#5B6662">Alimentação · R$ 1.768,00 de R$ 2.080,00</div></div><div style="font-size:16px;font-weight:800;color:#8A5300">85% · restam R$ 312,00</div></div>
+<div style="display:flex;align-items:center;gap:14px;min-height:72px;border-bottom:1px solid #E4E0D6"><span style="width:44px;height:44px;border-radius:14px;background:#F6E1DB;color:#B23F25;display:grid;place-items:center;flex:none;font-size:22px;font-weight:800">!</span><div style="flex:1;min-width:0"><div style="font-size:16px;font-weight:700">Estouro</div><div style="font-size:13px;color:#5B6662">Presentes &amp; Datas · R$ 180,00 de R$ 150,00</div></div><div style="font-size:16px;font-weight:800;color:#B23F25">! passou R$ 30,00</div></div>
+<div style="display:flex;align-items:center;gap:14px;min-height:72px"><span style="width:44px;height:44px;border-radius:14px;background:#F6E1DB;color:#B23F25;display:grid;place-items:center;flex:none;font-size:22px;font-weight:800">!</span><div style="flex:1;min-width:0"><div style="font-size:16px;font-weight:700">Atraso</div><div style="font-size:13px;color:#5B6662">Seguro do carro · venceu 10/10</div></div><div style="font-size:16px;font-weight:800;color:#B23F25">! atrasada · R$ 201,00</div></div>
+</div>
+</div>
+
+<div style="display:flex;flex-direction:column;gap:16px">
+<div style="font-size:13px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:#5B6662">Simulação de daltonismo</div>
+<div style="display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px">
+<div style="display:flex;flex-direction:column;gap:8px"><div style="font-size:13px;font-weight:700">Visão típica</div>
+<div style="background:#FFFFFF;border:1px solid #E4E0D6;border-radius:20px;padding:16px;display:flex;flex-direction:column;gap:12px">
+<div style="display:flex;justify-content:space-between;align-items:center;gap:8px;font-size:12px;color:#5B6662"><span>Receita</span><span style="font-size:15px;font-weight:800;color:#0B5D5B">+ R$ 3.500,00 ↑</span></div>
+<div style="display:flex;justify-content:space-between;align-items:center;gap:8px;font-size:12px;color:#5B6662"><span>Despesa</span><span style="font-size:15px;font-weight:800;color:#1C2321">− R$ 87,40</span></div>
+<div style="display:flex;justify-content:space-between;align-items:center;gap:8px;font-size:12px;color:#5B6662"><span>Alerta</span><span style="font-size:15px;font-weight:800;color:#8A5300;display:flex;align-items:center;gap:4px"><span class="material-symbols-rounded" aria-hidden="true" style="font-size:16px;font-variation-settings:'FILL' 1">warning</span>85%</span></div>
+<div style="display:flex;justify-content:space-between;align-items:center;gap:8px;font-size:12px;color:#5B6662"><span>Estouro</span><span style="font-size:15px;font-weight:800;color:#B23F25">! passou R$ 30</span></div>
+<div style="position:relative;height:10px;margin-top:4px"><div style="position:absolute;left:0;top:0;bottom:0;width:80%;background:#E3E8E6;border-radius:999px"></div><div style="position:absolute;left:0;top:0;bottom:0;width:80%;background:#A86A00;border-radius:999px 0 0 999px"></div><div style="position:absolute;left:80%;top:0;bottom:0;width:16.8%;background:repeating-linear-gradient(135deg,#B23F25 0 4px,#D4765F 4px 8px);border-radius:0 999px 999px 0"></div><div style="position:absolute;left:80%;top:-4px;bottom:-4px;width:2px;margin-left:-1px;background:#1C2321"></div></div>
+</div></div>
+<div style="display:flex;flex-direction:column;gap:8px"><div style="font-size:13px;font-weight:700">Deuteranopia</div>
+<div style="filter:url(#cb-deutan);background:#FFFFFF;border:1px solid #E4E0D6;border-radius:20px;padding:16px;display:flex;flex-direction:column;gap:12px">
+<div style="display:flex;justify-content:space-between;align-items:center;gap:8px;font-size:12px;color:#5B6662"><span>Receita</span><span style="font-size:15px;font-weight:800;color:#0B5D5B">+ R$ 3.500,00 ↑</span></div>
+<div style="display:flex;justify-content:space-between;align-items:center;gap:8px;font-size:12px;color:#5B6662"><span>Despesa</span><span style="font-size:15px;font-weight:800;color:#1C2321">− R$ 87,40</span></div>
+<div style="display:flex;justify-content:space-between;align-items:center;gap:8px;font-size:12px;color:#5B6662"><span>Alerta</span><span style="font-size:15px;font-weight:800;color:#8A5300;display:flex;align-items:center;gap:4px"><span class="material-symbols-rounded" aria-hidden="true" style="font-size:16px;font-variation-settings:'FILL' 1">warning</span>85%</span></div>
+<div style="display:flex;justify-content:space-between;align-items:center;gap:8px;font-size:12px;color:#5B6662"><span>Estouro</span><span style="font-size:15px;font-weight:800;color:#B23F25">! passou R$ 30</span></div>
+<div style="position:relative;height:10px;margin-top:4px"><div style="position:absolute;left:0;top:0;bottom:0;width:80%;background:#E3E8E6;border-radius:999px"></div><div style="position:absolute;left:0;top:0;bottom:0;width:80%;background:#A86A00;border-radius:999px 0 0 999px"></div><div style="position:absolute;left:80%;top:0;bottom:0;width:16.8%;background:repeating-linear-gradient(135deg,#B23F25 0 4px,#D4765F 4px 8px);border-radius:0 999px 999px 0"></div><div style="position:absolute;left:80%;top:-4px;bottom:-4px;width:2px;margin-left:-1px;background:#1C2321"></div></div>
+</div></div>
+<div style="display:flex;flex-direction:column;gap:8px"><div style="font-size:13px;font-weight:700">Protanopia</div>
+<div style="filter:url(#cb-protan);background:#FFFFFF;border:1px solid #E4E0D6;border-radius:20px;padding:16px;display:flex;flex-direction:column;gap:12px">
+<div style="display:flex;justify-content:space-between;align-items:center;gap:8px;font-size:12px;color:#5B6662"><span>Receita</span><span style="font-size:15px;font-weight:800;color:#0B5D5B">+ R$ 3.500,00 ↑</span></div>
+<div style="display:flex;justify-content:space-between;align-items:center;gap:8px;font-size:12px;color:#5B6662"><span>Despesa</span><span style="font-size:15px;font-weight:800;color:#1C2321">− R$ 87,40</span></div>
+<div style="display:flex;justify-content:space-between;align-items:center;gap:8px;font-size:12px;color:#5B6662"><span>Alerta</span><span style="font-size:15px;font-weight:800;color:#8A5300;display:flex;align-items:center;gap:4px"><span class="material-symbols-rounded" aria-hidden="true" style="font-size:16px;font-variation-settings:'FILL' 1">warning</span>85%</span></div>
+<div style="display:flex;justify-content:space-between;align-items:center;gap:8px;font-size:12px;color:#5B6662"><span>Estouro</span><span style="font-size:15px;font-weight:800;color:#B23F25">! passou R$ 30</span></div>
+<div style="position:relative;height:10px;margin-top:4px"><div style="position:absolute;left:0;top:0;bottom:0;width:80%;background:#E3E8E6;border-radius:999px"></div><div style="position:absolute;left:0;top:0;bottom:0;width:80%;background:#A86A00;border-radius:999px 0 0 999px"></div><div style="position:absolute;left:80%;top:0;bottom:0;width:16.8%;background:repeating-linear-gradient(135deg,#B23F25 0 4px,#D4765F 4px 8px);border-radius:0 999px 999px 0"></div><div style="position:absolute;left:80%;top:-4px;bottom:-4px;width:2px;margin-left:-1px;background:#1C2321"></div></div>
+</div></div>
+</div>
+<div style="font-size:13px;line-height:1.5;color:#5B6662;text-wrap:pretty">Simulação Machado (2009), severidade total. Receita e despesa se distinguem por “+ ↑” e “−”; alerta pelo ícone; estouro pelo “!”, pela hachura e pelo texto.</div>
+</div>
+
+<div style="display:flex;flex-direction:column;gap:16px">
+<div style="font-size:13px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:#5B6662">Barra de orçamento</div>
+<div style="background:#FFFFFF;border:1px solid #E4E0D6;border-radius:24px;padding:24px;box-shadow:0 1px 2px rgba(28,35,33,.06);display:flex;flex-direction:column;gap:28px">
+
+<div style="display:flex;flex-direction:column;gap:10px">
+<div style="display:flex;justify-content:space-between;align-items:center;gap:12px"><div style="display:flex;align-items:center;gap:10px;font-size:16px;font-weight:700"><span style="width:36px;height:36px;border-radius:11px;background:oklch(0.94 0.035 205);color:oklch(0.47 0.1 205);display:grid;place-items:center"><span class="material-symbols-rounded" aria-hidden="true" style="font-size:20px">directions_car</span></span>Transporte</div><div style="font-size:16px;font-weight:800">35%</div></div>
+<div style="position:relative;height:12px"><div style="position:absolute;left:0;top:0;bottom:0;width:80%;background:#E3E8E6;border-radius:999px"></div><div style="position:absolute;left:0;top:0;bottom:0;width:28%;background:#0B5D5B;border-radius:999px"></div><div style="position:absolute;left:80%;top:-3px;bottom:-3px;width:2px;margin-left:-1px;background:#5B6662;border-radius:1px"></div></div>
+<div style="display:flex;justify-content:space-between;font-size:13px;color:#5B6662"><span>R$ 210,00 de R$ 600,00</span><span>restam R$ 390,00</span></div>
+</div>
+
+<div style="display:flex;flex-direction:column;gap:10px">
+<div style="display:flex;justify-content:space-between;align-items:center;gap:12px"><div style="display:flex;align-items:center;gap:10px;font-size:16px;font-weight:700"><span style="width:36px;height:36px;border-radius:11px;background:oklch(0.94 0.035 61);color:oklch(0.47 0.1 61);display:grid;place-items:center"><span class="material-symbols-rounded" aria-hidden="true" style="font-size:20px">restaurant</span></span>Alimentação</div><div style="font-size:16px;font-weight:800;color:#8A5300;display:flex;align-items:center;gap:4px"><span class="material-symbols-rounded" aria-hidden="true" style="font-size:18px;font-variation-settings:'FILL' 1">warning</span>85%</div></div>
+<div style="position:relative;height:12px"><div style="position:absolute;left:0;top:0;bottom:0;width:80%;background:#E3E8E6;border-radius:999px"></div><div style="position:absolute;left:0;top:0;bottom:0;width:68%;background:#A86A00;border-radius:999px"></div><div style="position:absolute;left:80%;top:-5px;bottom:-5px;width:3px;margin-left:-1.5px;background:#1C2321;border-radius:2px"></div></div>
+<div style="display:flex;justify-content:space-between;font-size:13px;color:#5B6662"><span>R$ 1.768,00 de R$ 2.080,00</span><span style="color:#8A5300;font-weight:700">restam R$ 312,00</span></div>
+</div>
+
+<div style="display:flex;flex-direction:column;gap:10px">
+<div style="display:flex;justify-content:space-between;align-items:center;gap:12px"><div style="display:flex;align-items:center;gap:10px;font-size:16px;font-weight:700"><span style="width:36px;height:36px;border-radius:11px;background:oklch(0.94 0.035 61);color:oklch(0.47 0.1 61);display:grid;place-items:center"><span class="material-symbols-rounded" aria-hidden="true" style="font-size:20px">delivery_dining</span></span>Delivery</div><div style="font-size:16px;font-weight:800;color:#B23F25;display:flex;align-items:center;gap:6px"><span style="width:20px;height:20px;border-radius:50%;background:#B23F25;color:#FFF;font-size:13px;font-weight:800;display:grid;place-items:center">!</span>121%</div></div>
+<div style="position:relative;height:12px"><div style="position:absolute;left:0;top:0;bottom:0;width:80%;background:#A86A00;border-radius:999px 0 0 999px"></div><div style="position:absolute;left:80%;top:0;bottom:0;width:16.8%;background:repeating-linear-gradient(135deg,#B23F25 0 4px,#D4765F 4px 8px);border-radius:0 999px 999px 0"></div><div style="position:absolute;left:80%;top:-5px;bottom:-5px;width:3px;margin-left:-1.5px;background:#1C2321;border-radius:2px"></div></div>
+<div style="display:flex;justify-content:space-between;font-size:13px;color:#5B6662"><span>R$ 362,60 de R$ 300,00</span><span style="color:#B23F25;font-weight:700">! passou R$ 62,60</span></div>
+</div>
+
+<div style="display:flex;flex-direction:column;gap:10px">
+<div style="display:flex;justify-content:space-between;align-items:center;gap:12px"><div style="display:flex;align-items:center;gap:10px;font-size:16px;font-weight:700"><span style="width:36px;height:36px;border-radius:11px;background:oklch(0.94 0.035 13);color:oklch(0.47 0.1 13);display:grid;place-items:center"><span class="material-symbols-rounded" aria-hidden="true" style="font-size:20px">redeem</span></span>Presentes &amp; Datas</div><div style="font-size:16px;font-weight:800;color:#B23F25;display:flex;align-items:center;gap:6px"><span style="width:20px;height:20px;border-radius:50%;background:#B23F25;color:#FFF;font-size:13px;font-weight:800;display:grid;place-items:center">!</span>120%</div></div>
+<div style="position:relative;height:12px"><div style="position:absolute;left:0;top:0;bottom:0;width:80%;background:#A86A00;border-radius:999px 0 0 999px"></div><div style="position:absolute;left:80%;top:0;bottom:0;width:16%;background:repeating-linear-gradient(135deg,#B23F25 0 4px,#D4765F 4px 8px);border-radius:0 999px 999px 0"></div><div style="position:absolute;left:80%;top:-5px;bottom:-5px;width:3px;margin-left:-1.5px;background:#1C2321;border-radius:2px"></div></div>
+<div style="display:flex;justify-content:space-between;font-size:13px;color:#5B6662"><span>R$ 180,00 de R$ 150,00</span><span style="color:#B23F25;font-weight:700">! passou R$ 30,00</span></div>
+</div>
+
+<div style="display:flex;flex-wrap:wrap;gap:20px;padding-top:16px;border-top:1px solid #E4E0D6;font-size:13px;font-weight:600;color:#5B6662">
+<span style="display:flex;align-items:center;gap:8px"><span style="width:24px;height:10px;border-radius:999px;background:#0B5D5B"></span>até 79%</span>
+<span style="display:flex;align-items:center;gap:8px"><span style="width:24px;height:10px;border-radius:999px;background:#A86A00"></span><span class="material-symbols-rounded" aria-hidden="true" style="font-size:16px;color:#8A5300;font-variation-settings:'FILL' 1">warning</span>80% a 100%</span>
+<span style="display:flex;align-items:center;gap:8px"><span style="width:24px;height:10px;border-radius:999px;background:repeating-linear-gradient(135deg,#B23F25 0 4px,#D4765F 4px 8px)"></span>! excedente além do limite</span>
+<span style="display:flex;align-items:center;gap:8px"><span style="width:3px;height:16px;border-radius:2px;background:#1C2321"></span>limite (100%)</span>
+</div>
+</div>
+</div>
+
+<div style="display:flex;flex-direction:column;gap:16px">
+<div style="font-size:13px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:#5B6662">Chips de categoria · 56px</div>
+<div style="display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px">
+<button style="display:flex;align-items:center;gap:12px;min-height:56px;padding:8px 14px 8px 8px;border-radius:18px;border:1px solid #E4E0D6;background:#FFFFFF;color:#1C2321;font:600 15px Manrope,system-ui,sans-serif;text-align:left;cursor:pointer"><span style="width:40px;height:40px;border-radius:12px;background:oklch(0.94 0.035 229);color:oklch(0.47 0.1 229);display:grid;place-items:center;flex:none"><span class="material-symbols-rounded" aria-hidden="true" style="font-size:22px">home</span></span>Moradia</button>
+<button style="display:flex;align-items:center;gap:12px;min-height:56px;padding:8px 14px 8px 8px;border-radius:18px;border:1px solid #E4E0D6;background:#FFFFFF;color:#1C2321;font:600 15px Manrope,system-ui,sans-serif;text-align:left;cursor:pointer"><span style="width:40px;height:40px;border-radius:12px;background:oklch(0.94 0.035 205);color:oklch(0.47 0.1 205);display:grid;place-items:center;flex:none"><span class="material-symbols-rounded" aria-hidden="true" style="font-size:22px">directions_car</span></span>Transporte</button>
+<button style="display:flex;align-items:center;gap:12px;min-height:56px;padding:8px 14px 8px 8px;border-radius:18px;border:2px solid #0B5D5B;background:#E2EFED;color:#1C2321;font:700 15px Manrope,system-ui,sans-serif;text-align:left;cursor:pointer"><span style="width:40px;height:40px;border-radius:12px;background:oklch(0.94 0.035 61);color:oklch(0.47 0.1 61);display:grid;place-items:center;flex:none"><span class="material-symbols-rounded" aria-hidden="true" style="font-size:22px">restaurant</span></span><span style="flex:1">Alimentação</span><span class="material-symbols-rounded" aria-hidden="true" style="font-size:20px;color:#0B5D5B;font-variation-settings:'FILL' 1">check_circle</span></button>
+<button style="display:flex;align-items:center;gap:12px;min-height:56px;padding:8px 14px 8px 8px;border-radius:18px;border:1px solid #E4E0D6;background:#FFFFFF;color:#1C2321;font:600 15px Manrope,system-ui,sans-serif;text-align:left;cursor:pointer"><span style="width:40px;height:40px;border-radius:12px;background:oklch(0.94 0.035 37);color:oklch(0.47 0.1 37);display:grid;place-items:center;flex:none"><span class="material-symbols-rounded" aria-hidden="true" style="font-size:22px">favorite</span></span>Saúde</button>
+<button style="display:flex;align-items:center;gap:12px;min-height:56px;padding:8px 14px 8px 8px;border-radius:18px;border:1px solid #E4E0D6;background:#FFFFFF;color:#1C2321;font:600 15px Manrope,system-ui,sans-serif;text-align:left;cursor:pointer"><span style="width:40px;height:40px;border-radius:12px;background:oklch(0.94 0.035 301);color:oklch(0.47 0.1 301);display:grid;place-items:center;flex:none"><span class="material-symbols-rounded" aria-hidden="true" style="font-size:22px">school</span></span>Educação</button>
+<button style="display:flex;align-items:center;gap:12px;min-height:56px;padding:8px 14px 8px 8px;border-radius:18px;border:1px solid #E4E0D6;background:#FFFFFF;color:#1C2321;font:600 15px Manrope,system-ui,sans-serif;text-align:left;cursor:pointer"><span style="width:40px;height:40px;border-radius:12px;background:oklch(0.94 0.035 349);color:oklch(0.47 0.1 349);display:grid;place-items:center;flex:none"><span class="material-symbols-rounded" aria-hidden="true" style="font-size:22px">spa</span></span>Cuidados pessoais</button>
+<button style="display:flex;align-items:center;gap:12px;min-height:56px;padding:8px 14px 8px 8px;border-radius:18px;border:1px solid #E4E0D6;background:#FFFFFF;color:#1C2321;font:600 15px Manrope,system-ui,sans-serif;text-align:left;cursor:pointer"><span style="width:40px;height:40px;border-radius:12px;background:oklch(0.94 0.035 109);color:oklch(0.47 0.1 109);display:grid;place-items:center;flex:none"><span class="material-symbols-rounded" aria-hidden="true" style="font-size:22px">sports_soccer</span></span>Lazer &amp; Esporte</button>
+<button style="display:flex;align-items:center;gap:12px;min-height:56px;padding:8px 14px 8px 8px;border-radius:18px;border:1px solid #E4E0D6;background:#FFFFFF;color:#1C2321;font:600 15px Manrope,system-ui,sans-serif;text-align:left;cursor:pointer"><span style="width:40px;height:40px;border-radius:12px;background:oklch(0.94 0.035 325);color:oklch(0.47 0.1 325);display:grid;place-items:center;flex:none"><span class="material-symbols-rounded" aria-hidden="true" style="font-size:22px">checkroom</span></span>Vestuário</button>
+<button style="display:flex;align-items:center;gap:12px;min-height:56px;padding:8px 14px 8px 8px;border-radius:18px;border:1px solid #E4E0D6;background:#FFFFFF;color:#1C2321;font:600 15px Manrope,system-ui,sans-serif;text-align:left;cursor:pointer"><span style="width:40px;height:40px;border-radius:12px;background:oklch(0.94 0.035 277);color:oklch(0.47 0.1 277);display:grid;place-items:center;flex:none"><span class="material-symbols-rounded" aria-hidden="true" style="font-size:22px">subscriptions</span></span>Assinaturas</button>
+<button style="display:flex;align-items:center;gap:12px;min-height:56px;padding:8px 14px 8px 8px;border-radius:18px;border:1px solid #E4E0D6;background:#FFFFFF;color:#1C2321;font:600 15px Manrope,system-ui,sans-serif;text-align:left;cursor:pointer"><span style="width:40px;height:40px;border-radius:12px;background:oklch(0.94 0.035 13);color:oklch(0.47 0.1 13);display:grid;place-items:center;flex:none"><span class="material-symbols-rounded" aria-hidden="true" style="font-size:22px">redeem</span></span>Presentes</button>
+<button style="display:flex;align-items:center;gap:12px;min-height:56px;padding:8px 14px 8px 8px;border-radius:18px;border:1px solid #E4E0D6;background:#FFFFFF;color:#1C2321;font:600 15px Manrope,system-ui,sans-serif;text-align:left;cursor:pointer"><span style="width:40px;height:40px;border-radius:12px;background:oklch(0.94 0.035 85);color:oklch(0.47 0.1 85);display:grid;place-items:center;flex:none"><span class="material-symbols-rounded" aria-hidden="true" style="font-size:22px">payments</span></span>Dinheiro livre</button>
+<button style="display:flex;align-items:center;gap:12px;min-height:56px;padding:8px 14px 8px 8px;border-radius:18px;border:1px solid #E4E0D6;background:#FFFFFF;color:#1C2321;font:600 15px Manrope,system-ui,sans-serif;text-align:left;cursor:pointer"><span style="width:40px;height:40px;border-radius:12px;background:oklch(0.94 0.035 253);color:oklch(0.47 0.1 253);display:grid;place-items:center;flex:none"><span class="material-symbols-rounded" aria-hidden="true" style="font-size:22px">account_balance</span></span>Financeiro</button>
+<button style="display:flex;align-items:center;gap:12px;min-height:56px;padding:8px 14px 8px 8px;border-radius:18px;border:1px solid #E4E0D6;background:#FFFFFF;color:#1C2321;font:600 15px Manrope,system-ui,sans-serif;text-align:left;cursor:pointer"><span style="width:40px;height:40px;border-radius:12px;background:#E2EFED;color:#0B5D5B;display:grid;place-items:center;flex:none"><span class="material-symbols-rounded" aria-hidden="true" style="font-size:22px">savings</span></span>Futuro</button>
+</div>
+</div>
+
+<div style="display:flex;flex-direction:column;gap:16px">
+<div style="font-size:13px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:#5B6662">Cards de KPI</div>
+<div style="display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,1fr);gap:16px">
+<div style="background:#FFFFFF;border:1px solid #E4E0D6;border-radius:24px;padding:24px;box-shadow:0 1px 2px rgba(28,35,33,.06);display:flex;flex-direction:column;gap:8px">
+<div style="font-size:14px;font-weight:600;color:#5B6662">Pode gastar até 31/10</div>
+<div style="font-size:44px;line-height:1.05;font-weight:800;letter-spacing:-0.03em">R$ 1.693,10</div>
+<div style="font-size:14px;color:#5B6662">≈ R$ 100/dia · faltam 17 dias</div>
+</div>
+<div style="background:#FFFFFF;border:1px solid #E4E0D6;border-radius:24px;padding:24px;box-shadow:0 1px 2px rgba(28,35,33,.06);display:flex;flex-direction:column;gap:8px">
+<div style="font-size:14px;font-weight:600;color:#5B6662">Sobra prevista</div>
+<div style="font-size:36px;line-height:1.05;font-weight:800;letter-spacing:-0.02em;color:#0B5D5B">+ R$ 750,00 ↑</div>
+<div style="font-size:14px;color:#5B6662">R$ 600 no Futuro + R$ 150 sem destino</div>
+</div>
+<div style="background:#FFFFFF;border:1px solid #E4E0D6;border-radius:24px;padding:24px;box-shadow:0 1px 2px rgba(28,35,33,.06);display:flex;flex-direction:column;gap:8px">
+<div style="font-size:14px;font-weight:600;color:#5B6662">Despesas até hoje</div>
+<div style="font-size:36px;line-height:1.05;font-weight:800;letter-spacing:-0.02em">− R$ 4.953,40</div>
+<div style="font-size:14px;color:#5B6662">de R$ 11.686,50 recebidos</div>
+</div>
+<div style="background:#FFFFFF;border:1px solid #E4E0D6;border-radius:24px;padding:24px;box-shadow:0 1px 2px rgba(28,35,33,.06);display:flex;flex-direction:column;gap:8px">
+<div style="font-size:14px;font-weight:600;color:#5B6662">Taxa de poupança prevista</div>
+<div style="font-size:36px;line-height:1.05;font-weight:800;letter-spacing:-0.02em">6,4%</div>
+<div style="font-size:14px;font-weight:700;color:#8A5300;display:flex;align-items:center;gap:6px"><span class="material-symbols-rounded" aria-hidden="true" style="font-size:18px;font-variation-settings:'FILL' 1">warning</span>abaixo da meta de 10%</div>
+</div>
+</div>
+</div>
+
+<div style="display:flex;flex-direction:column;gap:16px">
+<div style="font-size:13px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:#5B6662">Avatares e selos</div>
+<div style="background:#FFFFFF;border:1px solid #E4E0D6;border-radius:24px;padding:24px;box-shadow:0 1px 2px rgba(28,35,33,.06);display:flex;flex-wrap:wrap;align-items:center;gap:28px">
+<div style="display:flex;align-items:center;gap:12px">
+<span aria-label="Lançado por Vini" style="width:36px;height:36px;border-radius:50%;background:#0B5D5B;color:#FFF;display:grid;place-items:center;font-size:15px;font-weight:800">V</span>
+<span aria-label="Lançado por Panty" style="width:36px;height:36px;border-radius:50%;background:#EFECE5;color:#1C2321;border:1.5px solid #1C2321;box-sizing:border-box;display:grid;place-items:center;font-size:15px;font-weight:800">P</span>
+<span style="font-size:13px;color:#5B6662">Vini · Panty</span>
+</div>
+<div style="display:flex;flex-wrap:wrap;gap:8px">
+<span style="display:inline-flex;align-items:center;gap:6px;height:28px;padding:0 10px;border-radius:999px;border:1.5px dashed #5B6662;color:#5B6662;font-size:12px;font-weight:700;box-sizing:border-box"><span class="material-symbols-rounded" aria-hidden="true" style="font-size:16px">schedule</span>previsto</span>
+<span style="display:inline-flex;align-items:center;gap:6px;height:28px;padding:0 10px;border-radius:999px;background:#EFECE5;color:#1C2321;font-size:12px;font-weight:700"><span class="material-symbols-rounded" aria-hidden="true" style="font-size:16px">credit_card</span>parcela 2/6</span>
+<span style="display:inline-flex;align-items:center;gap:6px;height:28px;padding:0 10px;border-radius:999px;background:#EFECE5;color:#1C2321;font-size:12px;font-weight:700"><span class="material-symbols-rounded" aria-hidden="true" style="font-size:16px">cloud_upload</span>aguardando sincronizar</span>
+<span style="display:inline-flex;align-items:center;gap:6px;height:28px;padding:0 10px;border-radius:999px;background:#1C2321;color:#FFF;font-size:12px;font-weight:700"><span class="material-symbols-rounded" aria-hidden="true" style="font-size:16px;font-variation-settings:'FILL' 1">lock</span>privado</span>
+</div>
+</div>
+</div>
+
+<div style="display:flex;flex-direction:column;gap:16px">
+<div style="font-size:13px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:#5B6662">Teclado numérico e lista por dia</div>
+<div style="display:grid;grid-template-columns:340px minmax(0,1fr);gap:16px;align-items:start">
+
+<div style="background:#FFFFFF;border:1px solid #E4E0D6;border-radius:24px;padding:20px;box-shadow:0 1px 2px rgba(28,35,33,.06);display:flex;flex-direction:column;gap:14px">
+<div style="display:flex;align-items:center;justify-content:space-between;gap:8px"><span style="display:inline-flex;align-items:center;gap:8px;font-size:14px;font-weight:700"><span style="width:32px;height:32px;border-radius:10px;background:oklch(0.94 0.035 61);color:oklch(0.47 0.1 61);display:grid;place-items:center"><span class="material-symbols-rounded" aria-hidden="true" style="font-size:18px">shopping_cart</span></span>Supermercado</span><span style="width:32px;height:32px;border-radius:50%;background:#EFECE5;color:#1C2321;border:1.5px solid #1C2321;box-sizing:border-box;display:grid;place-items:center;font-size:13px;font-weight:800">P</span></div>
+<div style="text-align:center;padding:8px 0"><div style="font-size:44px;font-weight:800;letter-spacing:-0.03em;line-height:1.1">− R$ 87,40</div><div style="font-size:13px;color:#5B6662;margin-top:4px">Vale-alimentação · hoje, 14/10</div></div>
+<div style="display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px">
+<button style="height:60px;border-radius:16px;border:0;background:#EFECE5;color:#1C2321;font:600 24px Manrope,system-ui,sans-serif;cursor:pointer">1</button>
+<button style="height:60px;border-radius:16px;border:0;background:#EFECE5;color:#1C2321;font:600 24px Manrope,system-ui,sans-serif;cursor:pointer">2</button>
+<button style="height:60px;border-radius:16px;border:0;background:#EFECE5;color:#1C2321;font:600 24px Manrope,system-ui,sans-serif;cursor:pointer">3</button>
+<button style="height:60px;border-radius:16px;border:0;background:#EFECE5;color:#1C2321;font:600 24px Manrope,system-ui,sans-serif;cursor:pointer">4</button>
+<button style="height:60px;border-radius:16px;border:0;background:#EFECE5;color:#1C2321;font:600 24px Manrope,system-ui,sans-serif;cursor:pointer">5</button>
+<button style="height:60px;border-radius:16px;border:0;background:#EFECE5;color:#1C2321;font:600 24px Manrope,system-ui,sans-serif;cursor:pointer">6</button>
+<button style="height:60px;border-radius:16px;border:0;background:#EFECE5;color:#1C2321;font:600 24px Manrope,system-ui,sans-serif;cursor:pointer">7</button>
+<button style="height:60px;border-radius:16px;border:0;background:#EFECE5;color:#1C2321;font:600 24px Manrope,system-ui,sans-serif;cursor:pointer">8</button>
+<button style="height:60px;border-radius:16px;border:0;background:#EFECE5;color:#1C2321;font:600 24px Manrope,system-ui,sans-serif;cursor:pointer">9</button>
+<button style="height:60px;border-radius:16px;border:0;background:#EFECE5;color:#1C2321;font:600 24px Manrope,system-ui,sans-serif;cursor:pointer">,</button>
+<button style="height:60px;border-radius:16px;border:0;background:#EFECE5;color:#1C2321;font:600 24px Manrope,system-ui,sans-serif;cursor:pointer">0</button>
+<button aria-label="Apagar" style="height:60px;border-radius:16px;border:0;background:#EFECE5;color:#1C2321;display:grid;place-items:center;cursor:pointer"><span class="material-symbols-rounded" aria-hidden="true" style="font-size:24px">backspace</span></button>
+</div>
+<button style="height:56px;border-radius:18px;border:0;background:#0B5D5B;color:#FFF;font:700 17px Manrope,system-ui,sans-serif;cursor:pointer" style-hover="background:#094B49">Salvar lançamento</button>
+</div>
+
+<div style="background:#FFFFFF;border:1px solid #E4E0D6;border-radius:24px;padding:8px 0;box-shadow:0 1px 2px rgba(28,35,33,.06);display:flex;flex-direction:column">
+<div style="display:flex;justify-content:space-between;align-items:baseline;padding:12px 20px 6px;font-size:13px;font-weight:700;color:#5B6662"><span>Hoje · qua 14/10</span><span>− R$ 87,40</span></div>
+<div style="display:flex;align-items:center;gap:12px;padding:10px 8px 10px 20px;min-height:64px">
+<span style="width:40px;height:40px;border-radius:12px;background:oklch(0.94 0.035 61);color:oklch(0.47 0.1 61);display:grid;place-items:center;flex:none"><span class="material-symbols-rounded" aria-hidden="true" style="font-size:22px">shopping_cart</span></span>
+<div style="flex:1;min-width:0;display:flex;flex-direction:column;gap:4px"><div style="font-size:15px;font-weight:700">Supermercado</div><div style="display:flex;flex-wrap:wrap;align-items:center;gap:6px;font-size:12px;color:#5B6662"><span style="width:20px;height:20px;border-radius:50%;background:#EFECE5;border:1.5px solid #1C2321;box-sizing:border-box;color:#1C2321;display:grid;place-items:center;font-size:10px;font-weight:800">P</span>VA · há 2 min</div></div>
+<div style="font-size:15px;font-weight:800">− R$ 87,40</div>
+<button aria-label="Ações do lançamento" style="width:44px;height:44px;border-radius:12px;border:0;background:transparent;color:#5B6662;display:grid;place-items:center;cursor:pointer;flex:none" style-hover="background:#EFECE5"><span class="material-symbols-rounded" aria-hidden="true" style="font-size:22px">more_vert</span></button>
+</div>
+<div style="display:flex;justify-content:space-between;align-items:baseline;padding:12px 20px 6px;font-size:13px;font-weight:700;color:#B23F25;border-top:1px solid #E4E0D6"><span>! Atrasado</span><span>− R$ 201,00</span></div>
+<div style="display:flex;align-items:center;gap:12px;padding:10px 8px 10px 20px;min-height:64px">
+<span style="width:40px;height:40px;border-radius:12px;background:oklch(0.94 0.035 205);color:oklch(0.47 0.1 205);display:grid;place-items:center;flex:none"><span class="material-symbols-rounded" aria-hidden="true" style="font-size:22px">directions_car</span></span>
+<div style="flex:1;min-width:0;display:flex;flex-direction:column;gap:4px"><div style="font-size:15px;font-weight:700">Seguro do carro</div><div style="font-size:12px;font-weight:700;color:#B23F25">! venceu 10/10 · 4 dias</div></div>
+<div style="font-size:15px;font-weight:800">− R$ 201,00</div>
+<button aria-label="Ações do lançamento" style="width:44px;height:44px;border-radius:12px;border:0;background:transparent;color:#5B6662;display:grid;place-items:center;cursor:pointer;flex:none" style-hover="background:#EFECE5"><span class="material-symbols-rounded" aria-hidden="true" style="font-size:22px">more_vert</span></button>
+</div>
+<div style="display:flex;justify-content:space-between;align-items:baseline;padding:12px 20px 6px;font-size:13px;font-weight:700;color:#5B6662;border-top:1px solid #E4E0D6"><span>Amanhã · qui 15/10</span><span>− R$ 1.403,00</span></div>
+<div style="display:flex;align-items:center;gap:12px;padding:10px 8px 10px 20px;min-height:64px">
+<span style="width:40px;height:40px;border-radius:12px;background:oklch(0.94 0.035 229);color:oklch(0.47 0.1 229);display:grid;place-items:center;flex:none"><span class="material-symbols-rounded" aria-hidden="true" style="font-size:22px">home</span></span>
+<div style="flex:1;min-width:0;display:flex;flex-direction:column;gap:4px"><div style="font-size:15px;font-weight:700">Aluguel</div><div><span style="display:inline-flex;align-items:center;gap:4px;height:24px;padding:0 8px;border-radius:999px;border:1.5px dashed #5B6662;color:#5B6662;font-size:11px;font-weight:700;box-sizing:border-box"><span class="material-symbols-rounded" aria-hidden="true" style="font-size:14px">schedule</span>previsto</span></div></div>
+<div style="font-size:15px;font-weight:800;color:#5B6662">− R$ 1.403,00</div>
+<button aria-label="Ações do lançamento" style="width:44px;height:44px;border-radius:12px;border:0;background:transparent;color:#5B6662;display:grid;place-items:center;cursor:pointer;flex:none" style-hover="background:#EFECE5"><span class="material-symbols-rounded" aria-hidden="true" style="font-size:22px">more_vert</span></button>
+</div>
+<div style="padding:10px 20px 12px;font-size:12px;line-height:1.4;color:#5B6662;border-top:1px solid #E4E0D6">Deslizar edita ou exclui; o botão ⋮ oferece as mesmas ações.</div>
+</div>
+</div>
+</div>
+
+<div style="display:flex;flex-direction:column;gap:16px">
+<div style="font-size:13px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:#5B6662">Navegação</div>
+<div style="display:flex;gap:16px;align-items:flex-start">
+
+<div style="width:248px;flex:none;background:#FFFFFF;border:1px solid #E4E0D6;border-radius:24px;padding:16px 12px;box-shadow:0 1px 2px rgba(28,35,33,.06);display:flex;flex-direction:column;gap:4px;box-sizing:border-box">
+<div style="display:flex;align-items:center;gap:10px;padding:4px 8px 16px"><span style="width:32px;height:32px;border-radius:10px;background:#0B5D5B;color:#FFF;display:grid;place-items:center"><span class="material-symbols-rounded" aria-hidden="true" style="font-size:18px">savings</span></span><span style="font-size:16px;font-weight:800">Nosso Caixa</span></div>
+<div style="display:flex;align-items:center;gap:12px;height:44px;padding:0 12px;border-radius:12px;background:#E2EFED;color:#0B5D5B;font-size:14px;font-weight:800"><span class="material-symbols-rounded" aria-hidden="true" style="font-size:20px;font-variation-settings:'FILL' 1">home</span>Início</div>
+<div style="display:flex;align-items:center;gap:12px;height:44px;padding:0 12px;border-radius:12px;color:#1C2321;font-size:14px;font-weight:600"><span class="material-symbols-rounded" aria-hidden="true" style="font-size:20px">receipt_long</span>Lançamentos</div>
+<div style="display:flex;align-items:center;gap:12px;height:44px;padding:0 12px;border-radius:12px;color:#1C2321;font-size:14px;font-weight:600;outline:3px solid #0B5D5B;outline-offset:2px"><span class="material-symbols-rounded" aria-hidden="true" style="font-size:20px">donut_large</span>Orçamento<span style="margin-left:auto;font-size:11px;font-weight:700;color:#5B6662">foco</span></div>
+<div style="display:flex;align-items:center;gap:12px;height:44px;padding:0 12px;border-radius:12px;color:#1C2321;font-size:14px;font-weight:600"><span class="material-symbols-rounded" aria-hidden="true" style="font-size:20px">credit_card</span>Contas e cartões</div>
+<div style="display:flex;align-items:center;gap:12px;height:44px;padding:0 12px;border-radius:12px;color:#1C2321;font-size:14px;font-weight:600"><span class="material-symbols-rounded" aria-hidden="true" style="font-size:20px">savings</span>Futuro</div>
+<div style="display:flex;align-items:center;gap:12px;height:44px;padding:0 12px;border-radius:12px;color:#1C2321;font-size:14px;font-weight:600"><span class="material-symbols-rounded" aria-hidden="true" style="font-size:20px">bar_chart</span>Relatórios</div>
+<div style="height:1px;background:#E4E0D6;margin:8px 4px"></div>
+<div style="display:flex;align-items:center;gap:12px;height:44px;padding:0 12px;border-radius:12px;color:#1C2321;font-size:14px;font-weight:600"><span class="material-symbols-rounded" aria-hidden="true" style="font-size:20px">settings</span>Configurações</div>
+</div>
+
+<div style="flex:1;min-width:0;display:flex;flex-direction:column;gap:12px">
+<div style="width:390px;max-width:100%;background:#FFFFFF;border:1px solid #E4E0D6;border-radius:24px 24px 32px 32px;box-shadow:0 1px 2px rgba(28,35,33,.06);padding:8px 8px 22px;box-sizing:border-box;display:grid;grid-template-columns:repeat(5,minmax(0,1fr));align-items:end">
+<div style="display:flex;flex-direction:column;align-items:center;gap:4px;min-height:56px;justify-content:center;color:#0B5D5B;font-size:11px;font-weight:800"><span style="width:52px;height:30px;border-radius:999px;background:#E2EFED;display:grid;place-items:center"><span class="material-symbols-rounded" aria-hidden="true" style="font-size:22px;font-variation-settings:'FILL' 1">home</span></span>Início</div>
+<div style="display:flex;flex-direction:column;align-items:center;gap:4px;min-height:56px;justify-content:center;color:#5B6662;font-size:11px;font-weight:600"><span style="height:30px;display:grid;place-items:center"><span class="material-symbols-rounded" aria-hidden="true" style="font-size:22px">receipt_long</span></span>Lançamentos</div>
+<div style="display:flex;justify-content:center;align-items:center;min-height:56px"><span aria-label="Novo lançamento" style="width:56px;height:56px;border-radius:20px;background:#0B5D5B;color:#FFF;display:grid;place-items:center"><span class="material-symbols-rounded" aria-hidden="true" style="font-size:30px">add</span></span></div>
+<div style="display:flex;flex-direction:column;align-items:center;gap:4px;min-height:56px;justify-content:center;color:#5B6662;font-size:11px;font-weight:600"><span style="height:30px;display:grid;place-items:center"><span class="material-symbols-rounded" aria-hidden="true" style="font-size:22px">donut_large</span></span>Orçamento</div>
+<div style="display:flex;flex-direction:column;align-items:center;gap:4px;min-height:56px;justify-content:center;color:#5B6662;font-size:11px;font-weight:600"><span style="height:30px;display:grid;place-items:center"><span class="material-symbols-rounded" aria-hidden="true" style="font-size:22px">more_horiz</span></span>Mais</div>
+</div>
+<div style="font-size:12px;line-height:1.5;color:#5B6662;max-width:390px;text-wrap:pretty">Bottom navigation 390px · item ativo com ícone preenchido, pílula e rótulo em negrito. Sidebar 248px no desktop com anel de foco de 3px.</div>
+</div>
+</div>
+</div>
+
+</div>
+<div data-col-end="1"></div>
+<div data-col="dark" style="display:{{ dispDark }};width:860px;flex:none;flex-direction:column;gap:44px;box-sizing:border-box;padding:40px;border-radius:32px;background:#0F1514;color:#E8EEEC">
+
+<div style="display:flex;align-items:center;justify-content:space-between;gap:16px">
+<div style="font-size:24px;font-weight:800;letter-spacing:-0.01em">Modo escuro</div>
+<div style="font-size:13px;font-weight:600;color:#A3B0AC">Elevação por superfícies mais claras, sem sombra</div>
+</div>
+
+<div style="display:flex;flex-direction:column;gap:16px">
+<div style="font-size:13px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:#A3B0AC">Cores</div>
+<div style="display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px">
+<div style="display:flex;flex-direction:column;gap:6px"><div style="height:64px;border-radius:14px;background:#0F1514;border:1px solid #2C3735"></div><div style="font-size:14px;font-weight:700">Fundo</div><div style="font-size:12px;color:#A3B0AC">#0F1514</div></div>
+<div style="display:flex;flex-direction:column;gap:6px"><div style="height:64px;border-radius:14px;background:#18201F;border:1px solid #2C3735"></div><div style="font-size:14px;font-weight:700">Superfície</div><div style="font-size:12px;color:#A3B0AC">#18201F</div></div>
+<div style="display:flex;flex-direction:column;gap:6px"><div style="height:64px;border-radius:14px;background:#222C2A;border:1px solid #2C3735"></div><div style="font-size:14px;font-weight:700">Superfície elevada</div><div style="font-size:12px;color:#A3B0AC">#222C2A · teclas, campos, itens elevados</div></div>
+<div style="display:flex;flex-direction:column;gap:6px"><div style="height:64px;border-radius:14px;background:#2A3533"></div><div style="font-size:14px;font-weight:700">Trilho</div><div style="font-size:12px;color:#A3B0AC">#2A3533</div></div>
+<div style="display:flex;flex-direction:column;gap:6px"><div style="height:64px;border-radius:14px;background:#E8EEEC"></div><div style="font-size:14px;font-weight:700">Texto · despesa</div><div style="font-size:12px;color:#A3B0AC;display:flex;justify-content:space-between"><span>#E8EEEC</span><span>15,7:1</span></div></div>
+<div style="display:flex;flex-direction:column;gap:6px"><div style="height:64px;border-radius:14px;background:#A3B0AC"></div><div style="font-size:14px;font-weight:700">Texto secundário</div><div style="font-size:12px;color:#A3B0AC;display:flex;justify-content:space-between"><span>#A3B0AC</span><span>8,2:1</span></div></div>
+<div style="display:flex;flex-direction:column;gap:6px"><div style="height:64px;border-radius:14px;background:#5CC2B5"></div><div style="font-size:14px;font-weight:700">Primária · receita</div><div style="font-size:12px;color:#A3B0AC;display:flex;justify-content:space-between"><span>#5CC2B5</span><span>8,6:1</span></div></div>
+<div style="display:flex;flex-direction:column;gap:6px"><div style="height:64px;border-radius:14px;background:#5CC2B5;color:#0F1514;display:grid;place-items:center;font-size:18px;font-weight:700">Aa</div><div style="font-size:14px;font-weight:700">Sobre a primária</div><div style="font-size:12px;color:#A3B0AC;display:flex;justify-content:space-between"><span>#0F1514</span><span>8,6:1</span></div></div>
+<div style="display:flex;flex-direction:column;gap:6px"><div style="height:64px;border-radius:14px;background:#F2B54A"></div><div style="font-size:14px;font-weight:700">Âmbar · texto</div><div style="font-size:12px;color:#A3B0AC;display:flex;justify-content:space-between"><span>#F2B54A</span><span>10,1:1</span></div></div>
+<div style="display:flex;flex-direction:column;gap:6px"><div style="height:64px;border-radius:14px;background:#F2B54A"></div><div style="font-size:14px;font-weight:700">Âmbar · preenchimento</div><div style="font-size:12px;color:#A3B0AC;display:flex;justify-content:space-between"><span>#F2B54A</span><span>6,9:1 no trilho</span></div></div>
+<div style="display:flex;flex-direction:column;gap:6px"><div style="height:64px;border-radius:14px;background:#F08B6E"></div><div style="font-size:14px;font-weight:700">Terracota · estouro</div><div style="font-size:12px;color:#A3B0AC;display:flex;justify-content:space-between"><span>#F08B6E</span><span>7,6:1</span></div></div>
+<div style="display:flex;flex-direction:column;gap:6px"><div style="height:64px;border-radius:14px;display:flex;overflow:hidden;border:1px solid #2C3735"><span style="flex:1;background:#1D3533"></span><span style="flex:1;background:#3A2F1A"></span><span style="flex:1;background:#3D241D"></span></div><div style="font-size:14px;font-weight:700">Fundos de estado</div><div style="font-size:12px;color:#A3B0AC">#1D3533 · #3A2F1A · #3D241D</div></div>
+</div>
+</div>
+
+<div style="display:flex;flex-direction:column;gap:16px">
+<div style="font-size:13px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:#A3B0AC">Tipografia · Manrope, números tabulares</div>
+<div style="display:grid;grid-template-columns:minmax(0,1.4fr) minmax(0,1fr);gap:16px">
+<div style="background:#18201F;border:1px solid #2C3735;border-radius:24px;padding:24px;box-shadow:0 1px 2px transparent;display:flex;flex-direction:column;gap:18px">
+<div style="display:flex;flex-direction:column;gap:4px"><div style="font-size:14px;font-weight:600;color:#A3B0AC">Valor · 56/800</div><div style="font-size:56px;line-height:1;font-weight:800;letter-spacing:-0.03em">R$ 1.693,10</div></div>
+<div style="display:flex;flex-direction:column;gap:4px"><div style="font-size:12px;font-weight:600;color:#A3B0AC">Título · 24/700</div><div style="font-size:24px;font-weight:700;letter-spacing:-0.01em">Orçamento de outubro</div></div>
+<div style="display:flex;flex-direction:column;gap:4px"><div style="font-size:12px;font-weight:600;color:#A3B0AC">Subtítulo · 18/600</div><div style="font-size:18px;font-weight:600">Alimentação</div></div>
+<div style="display:flex;flex-direction:column;gap:4px"><div style="font-size:12px;font-weight:600;color:#A3B0AC">Corpo · 16/500</div><div style="font-size:16px;font-weight:500;line-height:1.5">Faltam 17 dias para fechar o mês.</div></div>
+<div style="display:flex;flex-direction:column;gap:4px"><div style="font-size:12px;font-weight:600;color:#A3B0AC">Legenda · 13/600</div><div style="font-size:13px;font-weight:600;color:#A3B0AC">Panty · há 2 minutos · Vale-alimentação</div></div>
+</div>
+<div style="background:#18201F;border:1px solid #2C3735;border-radius:24px;padding:24px;box-shadow:0 1px 2px transparent;display:flex;flex-direction:column;gap:12px">
+<div style="font-size:14px;font-weight:700">Receitas de outubro</div>
+<div style="display:flex;justify-content:space-between;font-size:15px"><span style="color:#A3B0AC">Salário Vini</span><span style="font-weight:600">3.500,00</span></div>
+<div style="display:flex;justify-content:space-between;font-size:15px"><span style="color:#A3B0AC">Salário Panty</span><span style="font-weight:600">3.600,00</span></div>
+<div style="display:flex;justify-content:space-between;font-size:15px"><span style="color:#A3B0AC">Ajuda familiar</span><span style="font-weight:600">3.438,50</span></div>
+<div style="display:flex;justify-content:space-between;font-size:15px"><span style="color:#A3B0AC">Vale-alimentação</span><span style="font-weight:600">700,00</span></div>
+<div style="display:flex;justify-content:space-between;font-size:15px"><span style="color:#A3B0AC">Vale-combustível</span><span style="font-weight:600">448,00</span></div>
+<div style="height:1px;background:#2C3735"></div>
+<div style="display:flex;justify-content:space-between;font-size:16px;font-weight:800;color:#5CC2B5"><span>Total</span><span>+ R$ 11.686,50 ↑</span></div>
+<div style="font-size:12px;color:#A3B0AC;line-height:1.4">Dígitos de largura fixa: as colunas alinham sem tabela.</div>
+</div>
+</div>
+</div>
+
+<div style="display:flex;flex-direction:column;gap:16px">
+<div style="font-size:13px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:#A3B0AC">Estados de valor · cor + sinal + ícone + texto</div>
+<div style="background:#18201F;border:1px solid #2C3735;border-radius:24px;padding:8px 24px;box-shadow:0 1px 2px transparent;display:flex;flex-direction:column">
+<div style="display:flex;align-items:center;gap:14px;min-height:72px;border-bottom:1px solid #2C3735"><span style="width:44px;height:44px;border-radius:14px;background:#1D3533;color:#5CC2B5;display:grid;place-items:center;flex:none"><span class="material-symbols-rounded" aria-hidden="true" style="font-size:22px">arrow_upward</span></span><div style="flex:1;min-width:0"><div style="font-size:16px;font-weight:700">Receita</div><div style="font-size:13px;color:#A3B0AC">Salário Vini · recebido</div></div><div style="font-size:18px;font-weight:800;color:#5CC2B5">+ R$ 3.500,00 ↑</div></div>
+<div style="display:flex;align-items:center;gap:14px;min-height:72px;border-bottom:1px solid #2C3735"><span style="width:44px;height:44px;border-radius:14px;background:#222C2A;color:#E8EEEC;display:grid;place-items:center;flex:none"><span class="material-symbols-rounded" aria-hidden="true" style="font-size:22px">arrow_downward</span></span><div style="flex:1;min-width:0"><div style="font-size:16px;font-weight:700">Despesa</div><div style="font-size:13px;color:#A3B0AC">Supermercado · Vale-alimentação</div></div><div style="font-size:18px;font-weight:800;color:#E8EEEC">− R$ 87,40</div></div>
+<div style="display:flex;align-items:center;gap:14px;min-height:72px;border-bottom:1px solid #2C3735"><span style="width:44px;height:44px;border-radius:14px;background:#3A2F1A;color:#F2B54A;display:grid;place-items:center;flex:none"><span class="material-symbols-rounded" aria-hidden="true" style="font-size:22px;font-variation-settings:'FILL' 1">warning</span></span><div style="flex:1;min-width:0"><div style="font-size:16px;font-weight:700">Alerta</div><div style="font-size:13px;color:#A3B0AC">Alimentação · R$ 1.768,00 de R$ 2.080,00</div></div><div style="font-size:16px;font-weight:800;color:#F2B54A">85% · restam R$ 312,00</div></div>
+<div style="display:flex;align-items:center;gap:14px;min-height:72px;border-bottom:1px solid #2C3735"><span style="width:44px;height:44px;border-radius:14px;background:#3D241D;color:#F08B6E;display:grid;place-items:center;flex:none;font-size:22px;font-weight:800">!</span><div style="flex:1;min-width:0"><div style="font-size:16px;font-weight:700">Estouro</div><div style="font-size:13px;color:#A3B0AC">Presentes &amp; Datas · R$ 180,00 de R$ 150,00</div></div><div style="font-size:16px;font-weight:800;color:#F08B6E">! passou R$ 30,00</div></div>
+<div style="display:flex;align-items:center;gap:14px;min-height:72px"><span style="width:44px;height:44px;border-radius:14px;background:#3D241D;color:#F08B6E;display:grid;place-items:center;flex:none;font-size:22px;font-weight:800">!</span><div style="flex:1;min-width:0"><div style="font-size:16px;font-weight:700">Atraso</div><div style="font-size:13px;color:#A3B0AC">Seguro do carro · venceu 10/10</div></div><div style="font-size:16px;font-weight:800;color:#F08B6E">! atrasada · R$ 201,00</div></div>
+</div>
+</div>
+
+<div style="display:flex;flex-direction:column;gap:16px">
+<div style="font-size:13px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:#A3B0AC">Simulação de daltonismo</div>
+<div style="display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px">
+<div style="display:flex;flex-direction:column;gap:8px"><div style="font-size:13px;font-weight:700">Visão típica</div>
+<div style="background:#18201F;border:1px solid #2C3735;border-radius:20px;padding:16px;display:flex;flex-direction:column;gap:12px">
+<div style="display:flex;justify-content:space-between;align-items:center;gap:8px;font-size:12px;color:#A3B0AC"><span>Receita</span><span style="font-size:15px;font-weight:800;color:#5CC2B5">+ R$ 3.500,00 ↑</span></div>
+<div style="display:flex;justify-content:space-between;align-items:center;gap:8px;font-size:12px;color:#A3B0AC"><span>Despesa</span><span style="font-size:15px;font-weight:800;color:#E8EEEC">− R$ 87,40</span></div>
+<div style="display:flex;justify-content:space-between;align-items:center;gap:8px;font-size:12px;color:#A3B0AC"><span>Alerta</span><span style="font-size:15px;font-weight:800;color:#F2B54A;display:flex;align-items:center;gap:4px"><span class="material-symbols-rounded" aria-hidden="true" style="font-size:16px;font-variation-settings:'FILL' 1">warning</span>85%</span></div>
+<div style="display:flex;justify-content:space-between;align-items:center;gap:8px;font-size:12px;color:#A3B0AC"><span>Estouro</span><span style="font-size:15px;font-weight:800;color:#F08B6E">! passou R$ 30</span></div>
+<div style="position:relative;height:10px;margin-top:4px"><div style="position:absolute;left:0;top:0;bottom:0;width:80%;background:#2A3533;border-radius:999px"></div><div style="position:absolute;left:0;top:0;bottom:0;width:80%;background:#F2B54A;border-radius:999px 0 0 999px"></div><div style="position:absolute;left:80%;top:0;bottom:0;width:16.8%;background:repeating-linear-gradient(135deg,#F08B6E 0 4px,#B5654F 4px 8px);border-radius:0 999px 999px 0"></div><div style="position:absolute;left:80%;top:-4px;bottom:-4px;width:2px;margin-left:-1px;background:#E8EEEC"></div></div>
+</div></div>
+<div style="display:flex;flex-direction:column;gap:8px"><div style="font-size:13px;font-weight:700">Deuteranopia</div>
+<div style="filter:url(#cb-deutan);background:#18201F;border:1px solid #2C3735;border-radius:20px;padding:16px;display:flex;flex-direction:column;gap:12px">
+<div style="display:flex;justify-content:space-between;align-items:center;gap:8px;font-size:12px;color:#A3B0AC"><span>Receita</span><span style="font-size:15px;font-weight:800;color:#5CC2B5">+ R$ 3.500,00 ↑</span></div>
+<div style="display:flex;justify-content:space-between;align-items:center;gap:8px;font-size:12px;color:#A3B0AC"><span>Despesa</span><span style="font-size:15px;font-weight:800;color:#E8EEEC">− R$ 87,40</span></div>
+<div style="display:flex;justify-content:space-between;align-items:center;gap:8px;font-size:12px;color:#A3B0AC"><span>Alerta</span><span style="font-size:15px;font-weight:800;color:#F2B54A;display:flex;align-items:center;gap:4px"><span class="material-symbols-rounded" aria-hidden="true" style="font-size:16px;font-variation-settings:'FILL' 1">warning</span>85%</span></div>
+<div style="display:flex;justify-content:space-between;align-items:center;gap:8px;font-size:12px;color:#A3B0AC"><span>Estouro</span><span style="font-size:15px;font-weight:800;color:#F08B6E">! passou R$ 30</span></div>
+<div style="position:relative;height:10px;margin-top:4px"><div style="position:absolute;left:0;top:0;bottom:0;width:80%;background:#2A3533;border-radius:999px"></div><div style="position:absolute;left:0;top:0;bottom:0;width:80%;background:#F2B54A;border-radius:999px 0 0 999px"></div><div style="position:absolute;left:80%;top:0;bottom:0;width:16.8%;background:repeating-linear-gradient(135deg,#F08B6E 0 4px,#B5654F 4px 8px);border-radius:0 999px 999px 0"></div><div style="position:absolute;left:80%;top:-4px;bottom:-4px;width:2px;margin-left:-1px;background:#E8EEEC"></div></div>
+</div></div>
+<div style="display:flex;flex-direction:column;gap:8px"><div style="font-size:13px;font-weight:700">Protanopia</div>
+<div style="filter:url(#cb-protan);background:#18201F;border:1px solid #2C3735;border-radius:20px;padding:16px;display:flex;flex-direction:column;gap:12px">
+<div style="display:flex;justify-content:space-between;align-items:center;gap:8px;font-size:12px;color:#A3B0AC"><span>Receita</span><span style="font-size:15px;font-weight:800;color:#5CC2B5">+ R$ 3.500,00 ↑</span></div>
+<div style="display:flex;justify-content:space-between;align-items:center;gap:8px;font-size:12px;color:#A3B0AC"><span>Despesa</span><span style="font-size:15px;font-weight:800;color:#E8EEEC">− R$ 87,40</span></div>
+<div style="display:flex;justify-content:space-between;align-items:center;gap:8px;font-size:12px;color:#A3B0AC"><span>Alerta</span><span style="font-size:15px;font-weight:800;color:#F2B54A;display:flex;align-items:center;gap:4px"><span class="material-symbols-rounded" aria-hidden="true" style="font-size:16px;font-variation-settings:'FILL' 1">warning</span>85%</span></div>
+<div style="display:flex;justify-content:space-between;align-items:center;gap:8px;font-size:12px;color:#A3B0AC"><span>Estouro</span><span style="font-size:15px;font-weight:800;color:#F08B6E">! passou R$ 30</span></div>
+<div style="position:relative;height:10px;margin-top:4px"><div style="position:absolute;left:0;top:0;bottom:0;width:80%;background:#2A3533;border-radius:999px"></div><div style="position:absolute;left:0;top:0;bottom:0;width:80%;background:#F2B54A;border-radius:999px 0 0 999px"></div><div style="position:absolute;left:80%;top:0;bottom:0;width:16.8%;background:repeating-linear-gradient(135deg,#F08B6E 0 4px,#B5654F 4px 8px);border-radius:0 999px 999px 0"></div><div style="position:absolute;left:80%;top:-4px;bottom:-4px;width:2px;margin-left:-1px;background:#E8EEEC"></div></div>
+</div></div>
+</div>
+<div style="font-size:13px;line-height:1.5;color:#A3B0AC;text-wrap:pretty">Simulação Machado (2009), severidade total. Receita e despesa se distinguem por “+ ↑” e “−”; alerta pelo ícone; estouro pelo “!”, pela hachura e pelo texto.</div>
+</div>
+
+<div style="display:flex;flex-direction:column;gap:16px">
+<div style="font-size:13px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:#A3B0AC">Barra de orçamento</div>
+<div style="background:#18201F;border:1px solid #2C3735;border-radius:24px;padding:24px;box-shadow:0 1px 2px transparent;display:flex;flex-direction:column;gap:28px">
+
+<div style="display:flex;flex-direction:column;gap:10px">
+<div style="display:flex;justify-content:space-between;align-items:center;gap:12px"><div style="display:flex;align-items:center;gap:10px;font-size:16px;font-weight:700"><span style="width:36px;height:36px;border-radius:11px;background:oklch(0.33 0.045 205);color:oklch(0.85 0.08 205);display:grid;place-items:center"><span class="material-symbols-rounded" aria-hidden="true" style="font-size:20px">directions_car</span></span>Transporte</div><div style="font-size:16px;font-weight:800">35%</div></div>
+<div style="position:relative;height:12px"><div style="position:absolute;left:0;top:0;bottom:0;width:80%;background:#2A3533;border-radius:999px"></div><div style="position:absolute;left:0;top:0;bottom:0;width:28%;background:#5CC2B5;border-radius:999px"></div><div style="position:absolute;left:80%;top:-3px;bottom:-3px;width:2px;margin-left:-1px;background:#A3B0AC;border-radius:1px"></div></div>
+<div style="display:flex;justify-content:space-between;font-size:13px;color:#A3B0AC"><span>R$ 210,00 de R$ 600,00</span><span>restam R$ 390,00</span></div>
+</div>
+
+<div style="display:flex;flex-direction:column;gap:10px">
+<div style="display:flex;justify-content:space-between;align-items:center;gap:12px"><div style="display:flex;align-items:center;gap:10px;font-size:16px;font-weight:700"><span style="width:36px;height:36px;border-radius:11px;background:oklch(0.33 0.045 61);color:oklch(0.85 0.08 61);display:grid;place-items:center"><span class="material-symbols-rounded" aria-hidden="true" style="font-size:20px">restaurant</span></span>Alimentação</div><div style="font-size:16px;font-weight:800;color:#F2B54A;display:flex;align-items:center;gap:4px"><span class="material-symbols-rounded" aria-hidden="true" style="font-size:18px;font-variation-settings:'FILL' 1">warning</span>85%</div></div>
+<div style="position:relative;height:12px"><div style="position:absolute;left:0;top:0;bottom:0;width:80%;background:#2A3533;border-radius:999px"></div><div style="position:absolute;left:0;top:0;bottom:0;width:68%;background:#F2B54A;border-radius:999px"></div><div style="position:absolute;left:80%;top:-5px;bottom:-5px;width:3px;margin-left:-1.5px;background:#E8EEEC;border-radius:2px"></div></div>
+<div style="display:flex;justify-content:space-between;font-size:13px;color:#A3B0AC"><span>R$ 1.768,00 de R$ 2.080,00</span><span style="color:#F2B54A;font-weight:700">restam R$ 312,00</span></div>
+</div>
+
+<div style="display:flex;flex-direction:column;gap:10px">
+<div style="display:flex;justify-content:space-between;align-items:center;gap:12px"><div style="display:flex;align-items:center;gap:10px;font-size:16px;font-weight:700"><span style="width:36px;height:36px;border-radius:11px;background:oklch(0.33 0.045 61);color:oklch(0.85 0.08 61);display:grid;place-items:center"><span class="material-symbols-rounded" aria-hidden="true" style="font-size:20px">delivery_dining</span></span>Delivery</div><div style="font-size:16px;font-weight:800;color:#F08B6E;display:flex;align-items:center;gap:6px"><span style="width:20px;height:20px;border-radius:50%;background:#F08B6E;color:#0F1514;font-size:13px;font-weight:800;display:grid;place-items:center">!</span>121%</div></div>
+<div style="position:relative;height:12px"><div style="position:absolute;left:0;top:0;bottom:0;width:80%;background:#F2B54A;border-radius:999px 0 0 999px"></div><div style="position:absolute;left:80%;top:0;bottom:0;width:16.8%;background:repeating-linear-gradient(135deg,#F08B6E 0 4px,#B5654F 4px 8px);border-radius:0 999px 999px 0"></div><div style="position:absolute;left:80%;top:-5px;bottom:-5px;width:3px;margin-left:-1.5px;background:#E8EEEC;border-radius:2px"></div></div>
+<div style="display:flex;justify-content:space-between;font-size:13px;color:#A3B0AC"><span>R$ 362,60 de R$ 300,00</span><span style="color:#F08B6E;font-weight:700">! passou R$ 62,60</span></div>
+</div>
+
+<div style="display:flex;flex-direction:column;gap:10px">
+<div style="display:flex;justify-content:space-between;align-items:center;gap:12px"><div style="display:flex;align-items:center;gap:10px;font-size:16px;font-weight:700"><span style="width:36px;height:36px;border-radius:11px;background:oklch(0.33 0.045 13);color:oklch(0.85 0.08 13);display:grid;place-items:center"><span class="material-symbols-rounded" aria-hidden="true" style="font-size:20px">redeem</span></span>Presentes &amp; Datas</div><div style="font-size:16px;font-weight:800;color:#F08B6E;display:flex;align-items:center;gap:6px"><span style="width:20px;height:20px;border-radius:50%;background:#F08B6E;color:#0F1514;font-size:13px;font-weight:800;display:grid;place-items:center">!</span>120%</div></div>
+<div style="position:relative;height:12px"><div style="position:absolute;left:0;top:0;bottom:0;width:80%;background:#F2B54A;border-radius:999px 0 0 999px"></div><div style="position:absolute;left:80%;top:0;bottom:0;width:16%;background:repeating-linear-gradient(135deg,#F08B6E 0 4px,#B5654F 4px 8px);border-radius:0 999px 999px 0"></div><div style="position:absolute;left:80%;top:-5px;bottom:-5px;width:3px;margin-left:-1.5px;background:#E8EEEC;border-radius:2px"></div></div>
+<div style="display:flex;justify-content:space-between;font-size:13px;color:#A3B0AC"><span>R$ 180,00 de R$ 150,00</span><span style="color:#F08B6E;font-weight:700">! passou R$ 30,00</span></div>
+</div>
+
+<div style="display:flex;flex-wrap:wrap;gap:20px;padding-top:16px;border-top:1px solid #2C3735;font-size:13px;font-weight:600;color:#A3B0AC">
+<span style="display:flex;align-items:center;gap:8px"><span style="width:24px;height:10px;border-radius:999px;background:#5CC2B5"></span>até 79%</span>
+<span style="display:flex;align-items:center;gap:8px"><span style="width:24px;height:10px;border-radius:999px;background:#F2B54A"></span><span class="material-symbols-rounded" aria-hidden="true" style="font-size:16px;color:#F2B54A;font-variation-settings:'FILL' 1">warning</span>80% a 100%</span>
+<span style="display:flex;align-items:center;gap:8px"><span style="width:24px;height:10px;border-radius:999px;background:repeating-linear-gradient(135deg,#F08B6E 0 4px,#B5654F 4px 8px)"></span>! excedente além do limite</span>
+<span style="display:flex;align-items:center;gap:8px"><span style="width:3px;height:16px;border-radius:2px;background:#E8EEEC"></span>limite (100%)</span>
+</div>
+</div>
+</div>
+
+<div style="display:flex;flex-direction:column;gap:16px">
+<div style="font-size:13px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:#A3B0AC">Chips de categoria · 56px</div>
+<div style="display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px">
+<button style="display:flex;align-items:center;gap:12px;min-height:56px;padding:8px 14px 8px 8px;border-radius:18px;border:1px solid #2C3735;background:#18201F;color:#E8EEEC;font:600 15px Manrope,system-ui,sans-serif;text-align:left;cursor:pointer"><span style="width:40px;height:40px;border-radius:12px;background:oklch(0.33 0.045 229);color:oklch(0.85 0.08 229);display:grid;place-items:center;flex:none"><span class="material-symbols-rounded" aria-hidden="true" style="font-size:22px">home</span></span>Moradia</button>
+<button style="display:flex;align-items:center;gap:12px;min-height:56px;padding:8px 14px 8px 8px;border-radius:18px;border:1px solid #2C3735;background:#18201F;color:#E8EEEC;font:600 15px Manrope,system-ui,sans-serif;text-align:left;cursor:pointer"><span style="width:40px;height:40px;border-radius:12px;background:oklch(0.33 0.045 205);color:oklch(0.85 0.08 205);display:grid;place-items:center;flex:none"><span class="material-symbols-rounded" aria-hidden="true" style="font-size:22px">directions_car</span></span>Transporte</button>
+<button style="display:flex;align-items:center;gap:12px;min-height:56px;padding:8px 14px 8px 8px;border-radius:18px;border:2px solid #5CC2B5;background:#1D3533;color:#E8EEEC;font:700 15px Manrope,system-ui,sans-serif;text-align:left;cursor:pointer"><span style="width:40px;height:40px;border-radius:12px;background:oklch(0.33 0.045 61);color:oklch(0.85 0.08 61);display:grid;place-items:center;flex:none"><span class="material-symbols-rounded" aria-hidden="true" style="font-size:22px">restaurant</span></span><span style="flex:1">Alimentação</span><span class="material-symbols-rounded" aria-hidden="true" style="font-size:20px;color:#5CC2B5;font-variation-settings:'FILL' 1">check_circle</span></button>
+<button style="display:flex;align-items:center;gap:12px;min-height:56px;padding:8px 14px 8px 8px;border-radius:18px;border:1px solid #2C3735;background:#18201F;color:#E8EEEC;font:600 15px Manrope,system-ui,sans-serif;text-align:left;cursor:pointer"><span style="width:40px;height:40px;border-radius:12px;background:oklch(0.33 0.045 37);color:oklch(0.85 0.08 37);display:grid;place-items:center;flex:none"><span class="material-symbols-rounded" aria-hidden="true" style="font-size:22px">favorite</span></span>Saúde</button>
+<button style="display:flex;align-items:center;gap:12px;min-height:56px;padding:8px 14px 8px 8px;border-radius:18px;border:1px solid #2C3735;background:#18201F;color:#E8EEEC;font:600 15px Manrope,system-ui,sans-serif;text-align:left;cursor:pointer"><span style="width:40px;height:40px;border-radius:12px;background:oklch(0.33 0.045 301);color:oklch(0.85 0.08 301);display:grid;place-items:center;flex:none"><span class="material-symbols-rounded" aria-hidden="true" style="font-size:22px">school</span></span>Educação</button>
+<button style="display:flex;align-items:center;gap:12px;min-height:56px;padding:8px 14px 8px 8px;border-radius:18px;border:1px solid #2C3735;background:#18201F;color:#E8EEEC;font:600 15px Manrope,system-ui,sans-serif;text-align:left;cursor:pointer"><span style="width:40px;height:40px;border-radius:12px;background:oklch(0.33 0.045 349);color:oklch(0.85 0.08 349);display:grid;place-items:center;flex:none"><span class="material-symbols-rounded" aria-hidden="true" style="font-size:22px">spa</span></span>Cuidados pessoais</button>
+<button style="display:flex;align-items:center;gap:12px;min-height:56px;padding:8px 14px 8px 8px;border-radius:18px;border:1px solid #2C3735;background:#18201F;color:#E8EEEC;font:600 15px Manrope,system-ui,sans-serif;text-align:left;cursor:pointer"><span style="width:40px;height:40px;border-radius:12px;background:oklch(0.33 0.045 109);color:oklch(0.85 0.08 109);display:grid;place-items:center;flex:none"><span class="material-symbols-rounded" aria-hidden="true" style="font-size:22px">sports_soccer</span></span>Lazer &amp; Esporte</button>
+<button style="display:flex;align-items:center;gap:12px;min-height:56px;padding:8px 14px 8px 8px;border-radius:18px;border:1px solid #2C3735;background:#18201F;color:#E8EEEC;font:600 15px Manrope,system-ui,sans-serif;text-align:left;cursor:pointer"><span style="width:40px;height:40px;border-radius:12px;background:oklch(0.33 0.045 325);color:oklch(0.85 0.08 325);display:grid;place-items:center;flex:none"><span class="material-symbols-rounded" aria-hidden="true" style="font-size:22px">checkroom</span></span>Vestuário</button>
+<button style="display:flex;align-items:center;gap:12px;min-height:56px;padding:8px 14px 8px 8px;border-radius:18px;border:1px solid #2C3735;background:#18201F;color:#E8EEEC;font:600 15px Manrope,system-ui,sans-serif;text-align:left;cursor:pointer"><span style="width:40px;height:40px;border-radius:12px;background:oklch(0.33 0.045 277);color:oklch(0.85 0.08 277);display:grid;place-items:center;flex:none"><span class="material-symbols-rounded" aria-hidden="true" style="font-size:22px">subscriptions</span></span>Assinaturas</button>
+<button style="display:flex;align-items:center;gap:12px;min-height:56px;padding:8px 14px 8px 8px;border-radius:18px;border:1px solid #2C3735;background:#18201F;color:#E8EEEC;font:600 15px Manrope,system-ui,sans-serif;text-align:left;cursor:pointer"><span style="width:40px;height:40px;border-radius:12px;background:oklch(0.33 0.045 13);color:oklch(0.85 0.08 13);display:grid;place-items:center;flex:none"><span class="material-symbols-rounded" aria-hidden="true" style="font-size:22px">redeem</span></span>Presentes</button>
+<button style="display:flex;align-items:center;gap:12px;min-height:56px;padding:8px 14px 8px 8px;border-radius:18px;border:1px solid #2C3735;background:#18201F;color:#E8EEEC;font:600 15px Manrope,system-ui,sans-serif;text-align:left;cursor:pointer"><span style="width:40px;height:40px;border-radius:12px;background:oklch(0.33 0.045 85);color:oklch(0.85 0.08 85);display:grid;place-items:center;flex:none"><span class="material-symbols-rounded" aria-hidden="true" style="font-size:22px">payments</span></span>Dinheiro livre</button>
+<button style="display:flex;align-items:center;gap:12px;min-height:56px;padding:8px 14px 8px 8px;border-radius:18px;border:1px solid #2C3735;background:#18201F;color:#E8EEEC;font:600 15px Manrope,system-ui,sans-serif;text-align:left;cursor:pointer"><span style="width:40px;height:40px;border-radius:12px;background:oklch(0.33 0.045 253);color:oklch(0.85 0.08 253);display:grid;place-items:center;flex:none"><span class="material-symbols-rounded" aria-hidden="true" style="font-size:22px">account_balance</span></span>Financeiro</button>
+<button style="display:flex;align-items:center;gap:12px;min-height:56px;padding:8px 14px 8px 8px;border-radius:18px;border:1px solid #2C3735;background:#18201F;color:#E8EEEC;font:600 15px Manrope,system-ui,sans-serif;text-align:left;cursor:pointer"><span style="width:40px;height:40px;border-radius:12px;background:#1D3533;color:#5CC2B5;display:grid;place-items:center;flex:none"><span class="material-symbols-rounded" aria-hidden="true" style="font-size:22px">savings</span></span>Futuro</button>
+</div>
+</div>
+
+<div style="display:flex;flex-direction:column;gap:16px">
+<div style="font-size:13px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:#A3B0AC">Cards de KPI</div>
+<div style="display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,1fr);gap:16px">
+<div style="background:#18201F;border:1px solid #2C3735;border-radius:24px;padding:24px;box-shadow:0 1px 2px transparent;display:flex;flex-direction:column;gap:8px">
+<div style="font-size:14px;font-weight:600;color:#A3B0AC">Pode gastar até 31/10</div>
+<div style="font-size:44px;line-height:1.05;font-weight:800;letter-spacing:-0.03em">R$ 1.693,10</div>
+<div style="font-size:14px;color:#A3B0AC">≈ R$ 100/dia · faltam 17 dias</div>
+</div>
+<div style="background:#18201F;border:1px solid #2C3735;border-radius:24px;padding:24px;box-shadow:0 1px 2px transparent;display:flex;flex-direction:column;gap:8px">
+<div style="font-size:14px;font-weight:600;color:#A3B0AC">Sobra prevista</div>
+<div style="font-size:36px;line-height:1.05;font-weight:800;letter-spacing:-0.02em;color:#5CC2B5">+ R$ 750,00 ↑</div>
+<div style="font-size:14px;color:#A3B0AC">R$ 600 no Futuro + R$ 150 sem destino</div>
+</div>
+<div style="background:#18201F;border:1px solid #2C3735;border-radius:24px;padding:24px;box-shadow:0 1px 2px transparent;display:flex;flex-direction:column;gap:8px">
+<div style="font-size:14px;font-weight:600;color:#A3B0AC">Despesas até hoje</div>
+<div style="font-size:36px;line-height:1.05;font-weight:800;letter-spacing:-0.02em">− R$ 4.953,40</div>
+<div style="font-size:14px;color:#A3B0AC">de R$ 11.686,50 recebidos</div>
+</div>
+<div style="background:#18201F;border:1px solid #2C3735;border-radius:24px;padding:24px;box-shadow:0 1px 2px transparent;display:flex;flex-direction:column;gap:8px">
+<div style="font-size:14px;font-weight:600;color:#A3B0AC">Taxa de poupança prevista</div>
+<div style="font-size:36px;line-height:1.05;font-weight:800;letter-spacing:-0.02em">6,4%</div>
+<div style="font-size:14px;font-weight:700;color:#F2B54A;display:flex;align-items:center;gap:6px"><span class="material-symbols-rounded" aria-hidden="true" style="font-size:18px;font-variation-settings:'FILL' 1">warning</span>abaixo da meta de 10%</div>
+</div>
+</div>
+</div>
+
+<div style="display:flex;flex-direction:column;gap:16px">
+<div style="font-size:13px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:#A3B0AC">Avatares e selos</div>
+<div style="background:#18201F;border:1px solid #2C3735;border-radius:24px;padding:24px;box-shadow:0 1px 2px transparent;display:flex;flex-wrap:wrap;align-items:center;gap:28px">
+<div style="display:flex;align-items:center;gap:12px">
+<span aria-label="Lançado por Vini" style="width:36px;height:36px;border-radius:50%;background:#5CC2B5;color:#0F1514;display:grid;place-items:center;font-size:15px;font-weight:800">V</span>
+<span aria-label="Lançado por Panty" style="width:36px;height:36px;border-radius:50%;background:#222C2A;color:#E8EEEC;border:1.5px solid #E8EEEC;box-sizing:border-box;display:grid;place-items:center;font-size:15px;font-weight:800">P</span>
+<span style="font-size:13px;color:#A3B0AC">Vini · Panty</span>
+</div>
+<div style="display:flex;flex-wrap:wrap;gap:8px">
+<span style="display:inline-flex;align-items:center;gap:6px;height:28px;padding:0 10px;border-radius:999px;border:1.5px dashed #A3B0AC;color:#A3B0AC;font-size:12px;font-weight:700;box-sizing:border-box"><span class="material-symbols-rounded" aria-hidden="true" style="font-size:16px">schedule</span>previsto</span>
+<span style="display:inline-flex;align-items:center;gap:6px;height:28px;padding:0 10px;border-radius:999px;background:#222C2A;color:#E8EEEC;font-size:12px;font-weight:700"><span class="material-symbols-rounded" aria-hidden="true" style="font-size:16px">credit_card</span>parcela 2/6</span>
+<span style="display:inline-flex;align-items:center;gap:6px;height:28px;padding:0 10px;border-radius:999px;background:#222C2A;color:#E8EEEC;font-size:12px;font-weight:700"><span class="material-symbols-rounded" aria-hidden="true" style="font-size:16px">cloud_upload</span>aguardando sincronizar</span>
+<span style="display:inline-flex;align-items:center;gap:6px;height:28px;padding:0 10px;border-radius:999px;background:#E8EEEC;color:#0F1514;font-size:12px;font-weight:700"><span class="material-symbols-rounded" aria-hidden="true" style="font-size:16px;font-variation-settings:'FILL' 1">lock</span>privado</span>
+</div>
+</div>
+</div>
+
+<div style="display:flex;flex-direction:column;gap:16px">
+<div style="font-size:13px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:#A3B0AC">Teclado numérico e lista por dia</div>
+<div style="display:grid;grid-template-columns:340px minmax(0,1fr);gap:16px;align-items:start">
+
+<div style="background:#18201F;border:1px solid #2C3735;border-radius:24px;padding:20px;box-shadow:0 1px 2px transparent;display:flex;flex-direction:column;gap:14px">
+<div style="display:flex;align-items:center;justify-content:space-between;gap:8px"><span style="display:inline-flex;align-items:center;gap:8px;font-size:14px;font-weight:700"><span style="width:32px;height:32px;border-radius:10px;background:oklch(0.33 0.045 61);color:oklch(0.85 0.08 61);display:grid;place-items:center"><span class="material-symbols-rounded" aria-hidden="true" style="font-size:18px">shopping_cart</span></span>Supermercado</span><span style="width:32px;height:32px;border-radius:50%;background:#222C2A;color:#E8EEEC;border:1.5px solid #E8EEEC;box-sizing:border-box;display:grid;place-items:center;font-size:13px;font-weight:800">P</span></div>
+<div style="text-align:center;padding:8px 0"><div style="font-size:44px;font-weight:800;letter-spacing:-0.03em;line-height:1.1">− R$ 87,40</div><div style="font-size:13px;color:#A3B0AC;margin-top:4px">Vale-alimentação · hoje, 14/10</div></div>
+<div style="display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px">
+<button style="height:60px;border-radius:16px;border:0;background:#222C2A;color:#E8EEEC;font:600 24px Manrope,system-ui,sans-serif;cursor:pointer">1</button>
+<button style="height:60px;border-radius:16px;border:0;background:#222C2A;color:#E8EEEC;font:600 24px Manrope,system-ui,sans-serif;cursor:pointer">2</button>
+<button style="height:60px;border-radius:16px;border:0;background:#222C2A;color:#E8EEEC;font:600 24px Manrope,system-ui,sans-serif;cursor:pointer">3</button>
+<button style="height:60px;border-radius:16px;border:0;background:#222C2A;color:#E8EEEC;font:600 24px Manrope,system-ui,sans-serif;cursor:pointer">4</button>
+<button style="height:60px;border-radius:16px;border:0;background:#222C2A;color:#E8EEEC;font:600 24px Manrope,system-ui,sans-serif;cursor:pointer">5</button>
+<button style="height:60px;border-radius:16px;border:0;background:#222C2A;color:#E8EEEC;font:600 24px Manrope,system-ui,sans-serif;cursor:pointer">6</button>
+<button style="height:60px;border-radius:16px;border:0;background:#222C2A;color:#E8EEEC;font:600 24px Manrope,system-ui,sans-serif;cursor:pointer">7</button>
+<button style="height:60px;border-radius:16px;border:0;background:#222C2A;color:#E8EEEC;font:600 24px Manrope,system-ui,sans-serif;cursor:pointer">8</button>
+<button style="height:60px;border-radius:16px;border:0;background:#222C2A;color:#E8EEEC;font:600 24px Manrope,system-ui,sans-serif;cursor:pointer">9</button>
+<button style="height:60px;border-radius:16px;border:0;background:#222C2A;color:#E8EEEC;font:600 24px Manrope,system-ui,sans-serif;cursor:pointer">,</button>
+<button style="height:60px;border-radius:16px;border:0;background:#222C2A;color:#E8EEEC;font:600 24px Manrope,system-ui,sans-serif;cursor:pointer">0</button>
+<button aria-label="Apagar" style="height:60px;border-radius:16px;border:0;background:#222C2A;color:#E8EEEC;display:grid;place-items:center;cursor:pointer"><span class="material-symbols-rounded" aria-hidden="true" style="font-size:24px">backspace</span></button>
+</div>
+<button style="height:56px;border-radius:18px;border:0;background:#5CC2B5;color:#0F1514;font:700 17px Manrope,system-ui,sans-serif;cursor:pointer" style-hover="background:#7AD3C7">Salvar lançamento</button>
+</div>
+
+<div style="background:#18201F;border:1px solid #2C3735;border-radius:24px;padding:8px 0;box-shadow:0 1px 2px transparent;display:flex;flex-direction:column">
+<div style="display:flex;justify-content:space-between;align-items:baseline;padding:12px 20px 6px;font-size:13px;font-weight:700;color:#A3B0AC"><span>Hoje · qua 14/10</span><span>− R$ 87,40</span></div>
+<div style="display:flex;align-items:center;gap:12px;padding:10px 8px 10px 20px;min-height:64px">
+<span style="width:40px;height:40px;border-radius:12px;background:oklch(0.33 0.045 61);color:oklch(0.85 0.08 61);display:grid;place-items:center;flex:none"><span class="material-symbols-rounded" aria-hidden="true" style="font-size:22px">shopping_cart</span></span>
+<div style="flex:1;min-width:0;display:flex;flex-direction:column;gap:4px"><div style="font-size:15px;font-weight:700">Supermercado</div><div style="display:flex;flex-wrap:wrap;align-items:center;gap:6px;font-size:12px;color:#A3B0AC"><span style="width:20px;height:20px;border-radius:50%;background:#222C2A;border:1.5px solid #E8EEEC;box-sizing:border-box;color:#E8EEEC;display:grid;place-items:center;font-size:10px;font-weight:800">P</span>VA · há 2 min</div></div>
+<div style="font-size:15px;font-weight:800">− R$ 87,40</div>
+<button aria-label="Ações do lançamento" style="width:44px;height:44px;border-radius:12px;border:0;background:transparent;color:#A3B0AC;display:grid;place-items:center;cursor:pointer;flex:none" style-hover="background:#222C2A"><span class="material-symbols-rounded" aria-hidden="true" style="font-size:22px">more_vert</span></button>
+</div>
+<div style="display:flex;justify-content:space-between;align-items:baseline;padding:12px 20px 6px;font-size:13px;font-weight:700;color:#F08B6E;border-top:1px solid #2C3735"><span>! Atrasado</span><span>− R$ 201,00</span></div>
+<div style="display:flex;align-items:center;gap:12px;padding:10px 8px 10px 20px;min-height:64px">
+<span style="width:40px;height:40px;border-radius:12px;background:oklch(0.33 0.045 205);color:oklch(0.85 0.08 205);display:grid;place-items:center;flex:none"><span class="material-symbols-rounded" aria-hidden="true" style="font-size:22px">directions_car</span></span>
+<div style="flex:1;min-width:0;display:flex;flex-direction:column;gap:4px"><div style="font-size:15px;font-weight:700">Seguro do carro</div><div style="font-size:12px;font-weight:700;color:#F08B6E">! venceu 10/10 · 4 dias</div></div>
+<div style="font-size:15px;font-weight:800">− R$ 201,00</div>
+<button aria-label="Ações do lançamento" style="width:44px;height:44px;border-radius:12px;border:0;background:transparent;color:#A3B0AC;display:grid;place-items:center;cursor:pointer;flex:none" style-hover="background:#222C2A"><span class="material-symbols-rounded" aria-hidden="true" style="font-size:22px">more_vert</span></button>
+</div>
+<div style="display:flex;justify-content:space-between;align-items:baseline;padding:12px 20px 6px;font-size:13px;font-weight:700;color:#A3B0AC;border-top:1px solid #2C3735"><span>Amanhã · qui 15/10</span><span>− R$ 1.403,00</span></div>
+<div style="display:flex;align-items:center;gap:12px;padding:10px 8px 10px 20px;min-height:64px">
+<span style="width:40px;height:40px;border-radius:12px;background:oklch(0.33 0.045 229);color:oklch(0.85 0.08 229);display:grid;place-items:center;flex:none"><span class="material-symbols-rounded" aria-hidden="true" style="font-size:22px">home</span></span>
+<div style="flex:1;min-width:0;display:flex;flex-direction:column;gap:4px"><div style="font-size:15px;font-weight:700">Aluguel</div><div><span style="display:inline-flex;align-items:center;gap:4px;height:24px;padding:0 8px;border-radius:999px;border:1.5px dashed #A3B0AC;color:#A3B0AC;font-size:11px;font-weight:700;box-sizing:border-box"><span class="material-symbols-rounded" aria-hidden="true" style="font-size:14px">schedule</span>previsto</span></div></div>
+<div style="font-size:15px;font-weight:800;color:#A3B0AC">− R$ 1.403,00</div>
+<button aria-label="Ações do lançamento" style="width:44px;height:44px;border-radius:12px;border:0;background:transparent;color:#A3B0AC;display:grid;place-items:center;cursor:pointer;flex:none" style-hover="background:#222C2A"><span class="material-symbols-rounded" aria-hidden="true" style="font-size:22px">more_vert</span></button>
+</div>
+<div style="padding:10px 20px 12px;font-size:12px;line-height:1.4;color:#A3B0AC;border-top:1px solid #2C3735">Deslizar edita ou exclui; o botão ⋮ oferece as mesmas ações.</div>
+</div>
+</div>
+</div>
+
+<div style="display:flex;flex-direction:column;gap:16px">
+<div style="font-size:13px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:#A3B0AC">Navegação</div>
+<div style="display:flex;gap:16px;align-items:flex-start">
+
+<div style="width:248px;flex:none;background:#18201F;border:1px solid #2C3735;border-radius:24px;padding:16px 12px;box-shadow:0 1px 2px transparent;display:flex;flex-direction:column;gap:4px;box-sizing:border-box">
+<div style="display:flex;align-items:center;gap:10px;padding:4px 8px 16px"><span style="width:32px;height:32px;border-radius:10px;background:#5CC2B5;color:#0F1514;display:grid;place-items:center"><span class="material-symbols-rounded" aria-hidden="true" style="font-size:18px">savings</span></span><span style="font-size:16px;font-weight:800">Nosso Caixa</span></div>
+<div style="display:flex;align-items:center;gap:12px;height:44px;padding:0 12px;border-radius:12px;background:#1D3533;color:#5CC2B5;font-size:14px;font-weight:800"><span class="material-symbols-rounded" aria-hidden="true" style="font-size:20px;font-variation-settings:'FILL' 1">home</span>Início</div>
+<div style="display:flex;align-items:center;gap:12px;height:44px;padding:0 12px;border-radius:12px;color:#E8EEEC;font-size:14px;font-weight:600"><span class="material-symbols-rounded" aria-hidden="true" style="font-size:20px">receipt_long</span>Lançamentos</div>
+<div style="display:flex;align-items:center;gap:12px;height:44px;padding:0 12px;border-radius:12px;color:#E8EEEC;font-size:14px;font-weight:600;outline:3px solid #5CC2B5;outline-offset:2px"><span class="material-symbols-rounded" aria-hidden="true" style="font-size:20px">donut_large</span>Orçamento<span style="margin-left:auto;font-size:11px;font-weight:700;color:#A3B0AC">foco</span></div>
+<div style="display:flex;align-items:center;gap:12px;height:44px;padding:0 12px;border-radius:12px;color:#E8EEEC;font-size:14px;font-weight:600"><span class="material-symbols-rounded" aria-hidden="true" style="font-size:20px">credit_card</span>Contas e cartões</div>
+<div style="display:flex;align-items:center;gap:12px;height:44px;padding:0 12px;border-radius:12px;color:#E8EEEC;font-size:14px;font-weight:600"><span class="material-symbols-rounded" aria-hidden="true" style="font-size:20px">savings</span>Futuro</div>
+<div style="display:flex;align-items:center;gap:12px;height:44px;padding:0 12px;border-radius:12px;color:#E8EEEC;font-size:14px;font-weight:600"><span class="material-symbols-rounded" aria-hidden="true" style="font-size:20px">bar_chart</span>Relatórios</div>
+<div style="height:1px;background:#2C3735;margin:8px 4px"></div>
+<div style="display:flex;align-items:center;gap:12px;height:44px;padding:0 12px;border-radius:12px;color:#E8EEEC;font-size:14px;font-weight:600"><span class="material-symbols-rounded" aria-hidden="true" style="font-size:20px">settings</span>Configurações</div>
+</div>
+
+<div style="flex:1;min-width:0;display:flex;flex-direction:column;gap:12px">
+<div style="width:390px;max-width:100%;background:#18201F;border:1px solid #2C3735;border-radius:24px 24px 32px 32px;box-shadow:0 1px 2px transparent;padding:8px 8px 22px;box-sizing:border-box;display:grid;grid-template-columns:repeat(5,minmax(0,1fr));align-items:end">
+<div style="display:flex;flex-direction:column;align-items:center;gap:4px;min-height:56px;justify-content:center;color:#5CC2B5;font-size:11px;font-weight:800"><span style="width:52px;height:30px;border-radius:999px;background:#1D3533;display:grid;place-items:center"><span class="material-symbols-rounded" aria-hidden="true" style="font-size:22px;font-variation-settings:'FILL' 1">home</span></span>Início</div>
+<div style="display:flex;flex-direction:column;align-items:center;gap:4px;min-height:56px;justify-content:center;color:#A3B0AC;font-size:11px;font-weight:600"><span style="height:30px;display:grid;place-items:center"><span class="material-symbols-rounded" aria-hidden="true" style="font-size:22px">receipt_long</span></span>Lançamentos</div>
+<div style="display:flex;justify-content:center;align-items:center;min-height:56px"><span aria-label="Novo lançamento" style="width:56px;height:56px;border-radius:20px;background:#5CC2B5;color:#0F1514;display:grid;place-items:center"><span class="material-symbols-rounded" aria-hidden="true" style="font-size:30px">add</span></span></div>
+<div style="display:flex;flex-direction:column;align-items:center;gap:4px;min-height:56px;justify-content:center;color:#A3B0AC;font-size:11px;font-weight:600"><span style="height:30px;display:grid;place-items:center"><span class="material-symbols-rounded" aria-hidden="true" style="font-size:22px">donut_large</span></span>Orçamento</div>
+<div style="display:flex;flex-direction:column;align-items:center;gap:4px;min-height:56px;justify-content:center;color:#A3B0AC;font-size:11px;font-weight:600"><span style="height:30px;display:grid;place-items:center"><span class="material-symbols-rounded" aria-hidden="true" style="font-size:22px">more_horiz</span></span>Mais</div>
+</div>
+<div style="font-size:12px;line-height:1.5;color:#A3B0AC;max-width:390px;text-wrap:pretty">Bottom navigation 390px · item ativo com ícone preenchido, pílula e rótulo em negrito. Sidebar 248px no desktop com anel de foco de 3px.</div>
+</div>
+</div>
+</div>
+
+</div>
+
+
+</div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;modos&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;Lado a lado&quot;,&quot;Só claro&quot;,&quot;Só escuro&quot;],&quot;default&quot;:&quot;Lado a lado&quot;,&quot;tsType&quot;:&quot;string&quot;},&quot;simulacao&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;Nenhuma&quot;,&quot;Deuteranopia&quot;,&quot;Protanopia&quot;],&quot;default&quot;:&quot;Nenhuma&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Daltonismo (página inteira)&quot;}}">
+class Component extends DCLogic {
+  renderVals() {
+    const sim = this.props.simulacao ?? 'Nenhuma';
+    const modos = this.props.modos ?? 'Lado a lado';
+    return {
+      filtro: sim === 'Deuteranopia' ? 'url(#cb-deutan)' : sim === 'Protanopia' ? 'url(#cb-protan)' : 'none',
+      dispLight: modos === 'Só escuro' ? 'none' : 'flex',
+      dispDark: modos === 'Só claro' ? 'none' : 'flex',
+    };
+  }
+}
+</script>
+</body>
+</html>
