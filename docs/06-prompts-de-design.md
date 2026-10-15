@@ -15,7 +15,7 @@
 5. Leve o resultado para o desenvolvimento: handoff para o Claude Code ou exportação para `docs/design/`.
 
 **Ordem:**
-- **A — MVP:** P0 → P1 → P2 → P3 → P4 → P5 → P6 → P7 → P8 → P9 → P10 → P11 → **protótipo clicável**.
+- **A — MVP:** P0 → P0.1 → P1 → P2 → P3 → P4 → P5 → P6 → P7 → P8 → P9 → P10 → P11 → **protótipo clicável**.
 - **B — Foto:** P12 → P13.
 - **C — Desktop e futuro:** P14 → P19.
 
@@ -112,6 +112,30 @@ Os prompts completos estão logo abaixo.
 > **Último lançamento:** Panty, há 2 minutos, Supermercado R$ 87,40 no Vale-alimentação. Antes dele, Alimentação estava em R$ 1.680,60 (81%) e o VA em R$ 507,40.
 >
 > **Regras para todos os pedidos:** cada pedido é uma tela. Frames mobile 390×844 e desktop 1440×900. Quando eu pedir estados, faça um frame por estado, lado a lado, com rótulo. Use só os Dados de referência; se precisar de um número novo, mantenha as somas coerentes. Textos reais em pt-BR, sem lorem ipsum.
+
+#### P0.1 — Ajustes no sistema visual (iteração após a revisão do P0)
+> Ajuste a página do sistema visual nos modos claro e escuro, **lado a lado**. Mantenha tudo o que já está aprovado: cores, tipografia Manrope, barra de orçamento, simulação de daltonismo e componentes. Use só os Dados de referência; não mude nenhum número.
+>
+> **Correções**
+> 1. **Teclado numérico:** a digitação é tipo caixa eletrônico (8-7-4-0 vira R$ 87,40), então troque a tecla “,” por “00”.
+> 2. **Sinal de menos:** use o caractere “−” (U+2212) seguido de espaço em todas as despesas (“− R$ 87,40”): teclado, KPIs, lista e simulação de daltonismo. Nada de hífen nem travessão.
+> 3. **Lista por dia:** o valor nunca quebra linha; o nome quebra em até 2 linhas e depois trunca com reticências. Encurte o detalhe do seguro para “! atrasada há 4 dias”.
+> 4. **Contas a pagar na lista** (Seguro do carro, Aluguel) não são despesas pagas: as duas levam o selo “previsto” e um botão “Pagar”; o Seguro mantém o aviso de atraso.
+> 5. **Cores das categorias:**
+>    - Lazer & Esporte sai do verde-oliva (não pode haver segundo verde).
+>    - Futuro não usa o verde-petróleo da primária, que significa receita.
+>    - Presentes e Saúde se afastam do fundo de estouro (#F6E1DB).
+>    - Moradia, Transporte e Financeiro ficam distinguíveis entre si.
+>    - Mostre uma tabela das 13 categorias com ícone, cor do ícone e cor do fundo, no claro e no escuro, com os hex e o contraste do ícone sobre o fundo (mínimo 3:1).
+> 6. **Contraste das amostras:** diga sobre qual superfície cada contraste foi medido. No escuro, informe também o contraste sobre a superfície #18201F, onde ficam os cards.
+>
+> **Novas seções**
+> 7. **Texto a 200%:** o card “Pode gastar até 31/10 — R$ 1.693,10” e a linha “Supermercado · − R$ 87,40” em 390px de largura, sem cortar nenhum valor.
+> 8. **Foco visível:** anel de 3px também em chip de categoria, tecla do teclado, botão “Salvar lançamento” e item da lista.
+> 9. **Estados de interação** para botão, chip e tecla: normal, pressionado, desabilitado e carregando. E o estado vazio da lista: “Nenhum lançamento ainda”, com o botão “Lançar o primeiro gasto”.
+> 10. **Movimento:** tabela com as durações das animações (bottom sheet, toast, barra de orçamento) e o que muda com “reduzir movimento” ligado (sem deslizar; fade curto ou nenhuma animação).
+> 11. **Teto da barra de orçamento:** a barra nunca passa da largura do card. A partir de 150%, o segmento terracota para, ganha uma marca de quebra e o percentual continua escrito. Mostre com um exemplo rotulado “exemplo” (Delivery a 250%), fora dos Dados de referência.
+> 12. **Tokens:** um bloco final, pronto para copiar, com variáveis CSS para claro e escuro: cores (`--color-bg`, `--color-surface`, `--color-surface-subtle`, `--color-text`, `--color-text-secondary`, `--color-primary`, `--color-on-primary`, `--color-amber-text`, `--color-amber-fill`, `--color-terracotta`, `--color-track`, fundos de estado e as 13 categorias), tipografia, raios, espaçamentos e a sombra do modo claro.
 
 #### P1 — Mobile: Lançamento rápido (a tela mais importante)
 > Bottom sheet sobre a Início (390×844), aberto pelo “+”, para usar com uma mão. Fluxo-alvo: digitar o valor → 1 toque na categoria → 1 toque em Salvar. De cima para baixo:
