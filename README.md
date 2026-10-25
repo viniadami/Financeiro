@@ -8,7 +8,7 @@ O objetivo é ver para onde vai o dinheiro, criar uma rotina de orçamento famil
 - **No celular (os dois):** lançar gastos em segundos, ou por **foto** do cupom e do comprovante de PIX.
 - **No desktop:** análises, gráficos, dashboards e indicadores.
 
-> **Status:** fase de planejamento. Ainda não há código; este repositório guarda a análise, as decisões e os prompts de design.
+> **Status:** fase de design e início do desenvolvimento. O app está em [`app/`](app/) (Next.js + Tailwind) com a tela P1 · Lançamento rápido; o pacote do Claude Design fica em [`design/`](design/).
 
 ## Decisões já tomadas
 

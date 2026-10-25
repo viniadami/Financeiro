@@ -1,4 +1,3 @@
-import { useCallback, useMemo, useState } from 'react';
 import {
   ACCOUNTS,
   CATEGORIES,
@@ -9,9 +8,9 @@ import {
   type AccountId,
   type CategoryId,
   type Person,
-} from '../data/reference';
-import { budgetInfo, type BudgetInfo } from '../lib/budget';
-import { brl, expense, formatAmount, income } from '../lib/money';
+} from '@/data/reference';
+import { budgetInfo, type BudgetInfo } from '@/lib/budget';
+import { brl, expense, formatAmount, income } from '@/lib/money';
 
 export type EntryKind = 'despesa' | 'receita' | 'transferencia';
 
@@ -39,17 +38,7 @@ export interface Entry {
 let seq = 0;
 export const newEntryId = () => `e${Date.now().toString(36)}${(seq++).toString(36)}`;
 
-export function useLedger(initial: Entry[] = []) {
-  const [entries, setEntries] = useState<Entry[]>(initial);
-  const add = useCallback((e: Entry) => setEntries((xs) => [e, ...xs]), []);
-  const remove = useCallback((id: string) => setEntries((xs) => xs.filter((x) => x.id !== id)), []);
-  const selectors = useMemo(() => makeSelectors(entries), [entries]);
-  return { entries, add, remove, ...selectors };
-}
-
-export type Ledger = ReturnType<typeof useLedger>;
-
-function makeSelectors(entries: Entry[]) {
+export function makeSelectors(entries: Entry[]) {
   const expenses = entries.filter((e) => e.kind === 'despesa');
 
   const subSpent = (categoryId: CategoryId, subId: string) => {

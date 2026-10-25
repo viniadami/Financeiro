@@ -1,4 +1,5 @@
 import type { CSSProperties } from 'react';
+import { cn } from '@/lib/cn';
 
 interface Props {
   name: string;
@@ -10,9 +11,8 @@ interface Props {
 
 /** Ícone Material Symbols Rounded, sempre decorativo (aria-hidden). */
 export function Icon({ name, size = 24, filled, className, style }: Props) {
-  const cls = ['material-symbols-rounded', filled && 'is-filled', className].filter(Boolean).join(' ');
   return (
-    <span className={cls} aria-hidden="true" style={{ fontSize: size, ...style }}>
+    <span className={cn('material-symbols-rounded', filled && 'is-filled', className)} aria-hidden="true" style={{ fontSize: size, ...style }}>
       {name}
     </span>
   );

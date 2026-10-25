@@ -1,0 +1,192 @@
+@import 'tailwindcss';
+@import '../styles/tokens.css';
+
+/* Telas baixas: teclado com 48px em vez de 56px. */
+@custom-variant short (@media (max-height: 760px));
+/* Celular de verdade: tela cheia, sem moldura de aparelho nem seletor de frames. */
+@custom-variant phone (@media (max-width: 720px), (max-height: 700px) and (max-width: 900px));
+
+/*
+ * Classes do Tailwind apontando para os tokens do Sistema Visual v2.
+ * "reference" não redefine as variáveis: o valor vem sempre de tokens.css
+ * (claro, [data-theme="dark"] e "reduzir movimento").
+ */
+@theme inline reference {
+  --color-*: initial;
+  --color-bg: var(--color-bg);
+  --color-surface: var(--color-surface);
+  --color-surface-subtle: var(--color-surface-subtle);
+  --color-border: var(--color-border);
+  --color-text: var(--color-text);
+  --color-text-secondary: var(--color-text-secondary);
+  --color-primary: var(--color-primary);
+  --color-primary-hover: var(--color-primary-hover);
+  --color-primary-pressed: var(--color-primary-pressed);
+  --color-on-primary: var(--color-on-primary);
+  --color-amber-text: var(--color-amber-text);
+  --color-amber-fill: var(--color-amber-fill);
+  --color-terracotta: var(--color-terracotta);
+  --color-terracotta-hatch: var(--color-terracotta-hatch);
+  --color-track: var(--color-track);
+  --color-key-pressed: var(--color-key-pressed);
+  --color-bg-positive: var(--color-bg-positive);
+  --color-bg-amber: var(--color-bg-amber);
+  --color-bg-terracotta: var(--color-bg-terracotta);
+  /* cores do P1 que o v2 não tokeniza (definidas abaixo) */
+  --color-hover: var(--color-hover);
+  --color-device-border: var(--color-device-border);
+  --color-handle: var(--color-handle);
+  --color-handle-active: var(--color-handle-active);
+  --color-scrim: var(--color-scrim);
+  --color-scrim-dragging: var(--color-scrim-dragging);
+  --color-scrim-dialog: var(--color-scrim-dialog);
+  --color-toast-bg: var(--toast-bg);
+  --color-toast-text: var(--toast-text);
+  --color-toast-text-secondary: var(--toast-text-secondary);
+  --color-toast-accent: var(--toast-accent);
+  --color-toast-hover: var(--toast-hover);
+  --color-page: var(--page-bg);
+
+  --font-sans: var(--font-family);
+
+  --radius-xs: var(--radius-xs);
+  --radius-sm: var(--radius-sm);
+  --radius-md: var(--radius-md);
+  --radius-key: var(--radius-key);
+  --radius-button: var(--radius-button);
+  --radius-card: var(--radius-card);
+  --radius-sheet: var(--radius-sheet);
+  --radius-pill: var(--radius-pill);
+
+  --shadow-card: var(--shadow-card);
+  --shadow-sheet: var(--shadow-sheet);
+  --shadow-segment: var(--shadow-segment);
+  --shadow-dialog: var(--shadow-dialog);
+  --shadow-toast: var(--shadow-toast);
+
+  --ease-out: var(--ease-out);
+  --ease-in: var(--ease-in);
+}
+
+@theme {
+  --animate-sheet-in: slide-in var(--motion-sheet-in) var(--ease-out);
+  --animate-sheet-out: slide-out var(--motion-sheet-out) var(--ease-in) both;
+  --animate-sheet-fade-in: fade-in var(--motion-sheet-in) var(--ease-out);
+  --animate-sheet-fade-out: fade-out var(--motion-sheet-out) var(--ease-in) both;
+  --animate-dialog-in: dialog-in var(--motion-sheet-in) var(--ease-out) both;
+  --animate-dialog-fade-in: fade-in var(--motion-toast-in) var(--ease-out) both;
+  --animate-toast-in: toast-up var(--motion-toast-in) var(--ease-out);
+  --animate-toast-in-top: toast-down var(--motion-toast-in) var(--ease-out);
+  --animate-toast-fade-in: fade-in var(--motion-toast-in) var(--ease-out);
+  --animate-toast-out: fade-out var(--motion-toast-out) var(--ease-in) both;
+  --animate-spin: spin 0.9s linear infinite;
+
+  @keyframes slide-in {
+    from { transform: translateY(100%); }
+  }
+  @keyframes slide-out {
+    to { transform: translateY(100%); }
+  }
+  @keyframes fade-in {
+    from { opacity: 0; }
+  }
+  @keyframes fade-out {
+    to { opacity: 0; }
+  }
+  @keyframes dialog-in {
+    from { transform: translateY(24px); opacity: 0; }
+  }
+  @keyframes toast-up {
+    from { transform: translateY(16px); opacity: 0; }
+  }
+  @keyframes toast-down {
+    from { transform: translateY(-16px); opacity: 0; }
+  }
+}
+
+/* Cores do P1 que o Sistema Visual v2 não tokeniza. */
+:root {
+  --color-hover: #E4E0D6;
+  --color-device-border: #DDD8CE;
+  --color-handle: #C9C4B8;
+  --color-handle-active: #5B6662;
+  --color-scrim: rgba(15, 21, 20, 0.42);
+  --color-scrim-dragging: rgba(15, 21, 20, 0.28);
+  --color-scrim-dialog: rgba(15, 21, 20, 0.38);
+  --shadow-sheet: 0 -4px 24px rgba(15, 21, 20, 0.12);
+  --shadow-segment: 0 1px 3px rgba(28, 35, 33, 0.14);
+  --shadow-dialog: 0 12px 32px rgba(15, 21, 20, 0.28);
+  --shadow-toast: 0 10px 28px rgba(15, 21, 20, 0.28);
+  --toast-bg: #1C2321;
+  --toast-text: #FFFFFF;
+  --toast-text-secondary: #C6D0CD;
+  --toast-accent: #5CC2B5;
+  --toast-hover: #2A3533;
+  --page-bg: #E9E6DF;
+}
+
+[data-theme='dark'] {
+  --color-hover: #2C3735;
+  --color-device-border: #2C3735;
+  --color-handle: #3A4745;
+  --color-handle-active: #A3B0AC;
+  --toast-bg: #E8EEEC;
+  --toast-text: #0F1514;
+  --toast-text-secondary: #3F4A47;
+  --toast-accent: #0B5D5B;
+  --toast-hover: #D3DCD9;
+  --page-bg: #080C0B;
+}
+
+@layer base {
+  html,
+  body {
+    height: 100%;
+  }
+
+  body {
+    background: var(--page-bg);
+    color: var(--color-text);
+    -webkit-font-smoothing: antialiased;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  button {
+    cursor: pointer;
+    user-select: none;
+  }
+
+  button:disabled {
+    cursor: not-allowed;
+  }
+
+  :focus-visible {
+    outline: var(--focus-ring);
+    outline-offset: var(--focus-ring-offset);
+  }
+
+  /* Contêineres que só recebem foco por código (diálogos) não mostram o anel. */
+  [tabindex='-1']:focus {
+    outline: none;
+  }
+}
+
+@layer components {
+  .material-symbols-rounded {
+    font-family: 'Material Symbols Rounded';
+    font-weight: normal;
+    font-style: normal;
+    line-height: 1;
+    letter-spacing: normal;
+    text-transform: none;
+    white-space: nowrap;
+    direction: ltr;
+    display: inline-block;
+    font-feature-settings: 'liga';
+    font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+  }
+
+  .material-symbols-rounded.is-filled {
+    font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+  }
+}

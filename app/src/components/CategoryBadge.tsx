@@ -1,4 +1,4 @@
-import type { CategoryId } from '../data/reference';
+import type { CategoryId } from '@/data/reference';
 import { Icon } from './Icon';
 
 interface Props {

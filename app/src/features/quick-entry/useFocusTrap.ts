@@ -3,7 +3,7 @@ import { useEffect, type RefObject } from 'react';
 const FOCUSABLE = 'button:not([disabled]), input:not([disabled]), [href], [tabindex]:not([tabindex="-1"])';
 
 /** Mantém o Tab dentro do contêiner enquanto `active`, e foca nele ao ativar. */
-export function useFocusTrap(ref: RefObject<HTMLElement>, active: boolean) {
+export function useFocusTrap(ref: RefObject<HTMLElement | null>, active: boolean) {
   useEffect(() => {
     const el = ref.current;
     if (!active || !el) return;

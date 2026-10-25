@@ -6,9 +6,9 @@ import {
   subcategoryById,
   type AccountId,
   type CategoryId,
-} from '../../data/reference';
-import { centsToDigits, digitsToCents, pressKey, type KeypadKey } from '../../lib/money';
-import type { EntryKind } from '../../state/ledger';
+} from '@/data/reference';
+import { centsToDigits, digitsToCents, pressKey, type KeypadKey } from '@/lib/money';
+import type { EntryKind } from '@/state/ledger';
 
 /** O que ocupa a zona do meio do sheet. */
 export type Panel = 'categories' | 'subcategories' | 'all-categories' | 'more' | 'account' | 'from' | 'to';
